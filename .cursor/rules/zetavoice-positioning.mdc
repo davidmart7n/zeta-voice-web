@@ -1,0 +1,196 @@
+---
+description: "Contexto estratégico, posicionamiento y tono para Zetavoice - SaaS B2B para agencias"
+alwaysApply: true
+---
+
+# Zetavoice - Contexto del Producto
+
+## 🎯 Qué es Zetavoice
+Zetavoice es un **SaaS B2B para agencias de marketing, social media, contenidos y copywriting** que gestionan múltiples clientes simultáneamente.
+
+**NO es un simple generador de copy con IA.**  
+**ES una plataforma de operación de contenido multi-cliente** que centraliza contexto, producción y aprobación.
+
+## 🎨 Posicionamiento Estratégico
+
+### Propuesta de valor principal
+"Centraliza el contexto de cada cliente, genera contenido alineado con su voz de marca y organiza la revisión en un flujo único."
+
+text
+
+### Mensaje clave para toda comunicación
+"Produce contenido para varios clientes sin mezclar marcas, sin rehacer prompts cada día y sin perder el control de aprobación."
+
+text
+
+### Audiencia objetivo
+- Agencias pequeñas/medias de marketing digital
+- Agencias de social media 
+- Agencias de contenidos
+- Agencias de copywriting
+- Estudios creativos
+- Freelancers avanzados (3+ clientes recurrentes)
+
+## 🛠️ Capacidades del producto (para describir, NO para listar como features)
+Hub centralizado de clientes activos
+
+Onboarding específico por marca (notas, PDFs, logos, contexto)
+
+Biblioteca de plantillas reutilizables por objetivo:
+
+Transformación (antes/después)
+
+Educativo
+
+Tutorial accionable
+
+Autoridad/opinión
+
+Oferta/promoción
+
+Testimonio/resultados
+
+Generación parametrizada (tono, red social, longitud, creatividad)
+
+Cola de aprobación unificada por cliente
+
+Flujo completo: contexto → borrador → revisión → publicación
+
+text
+
+## 💬 Tono y Estilo de Copywriting (OBLIGATORIO)
+✅ SÍ usar:
+
+Claro, directo, profesional
+
+SaaS B2B premium (Linear, Vercel, Stripe)
+
+Centrado en beneficios operativos reales
+
+Lenguaje de agencia (dolor operativo + ROI)
+
+Específico, creíble, medible
+
+❌ NO usar NUNCA:
+
+"Revoluciona tu negocio"
+
+"Lleva tu empresa al siguiente nivel"
+
+"Desata el poder de la IA"
+
+"Contenido en segundos"
+
+"Transformación digital brutal"
+
+Frases vacías / hype / genéricas
+
+Presentar como "generador de posts con IA"
+
+text
+
+## 🎭 Principios de Comunicación
+SIEMPRE enfatizar: contexto por cliente, no mezcla de marcas
+
+SIEMPRE hablar de operación/orden/escalabilidad antes que IA
+
+SIEMPRE conectar con dolor real de agencias multi-cliente
+
+NUNCA sobreprometer calidad creativa (es asistente, no reemplazo)
+
+SIEMPRE mostrar que respeta el criterio humano de revisión
+
+text
+
+## 📱 Referencia visual del dashboard (cuando describas UX)
+Dashboard principal: Lista de clientes con badges de posts pendientes
+
+Onboarding cliente: Fuentes, archivos, notas, descripción de marca
+
+Plantillas: Biblioteca categorizada por objetivo (Transformación, Educativo...)
+
+Generación: Parámetros (tono, red, longitud, creatividad 1-10)
+
+Cola aprobación: Pendientes → Revisados → Publicados por cliente
+
+text
+
+## 🚫 Errores Comunes a Evitar
+❌ NO posicionar como:
+
+"IA que escribe posts automáticamente"
+
+"Generador de contenido viral"
+
+"Herramienta para freelancers sin clientes"
+
+❌ NO usar copy genérico:
+
+Headlines que podrían servir para cualquier SaaS
+
+Claims sin respaldo operativo
+
+Enfoque en velocidad sobre control/calidad
+
+✅ SÍ posicionar como:
+
+Infraestructura operativa para agencias
+
+Sistema para producir más sin caos
+
+Plataforma que entiende la realidad multi-cliente
+
+text
+
+## 🎯 Objetivos de Conversión por Sección
+Hero: Entender propuesta en 3 segundos → CTA demo
+Problema: Reconocer dolor propio → confianza
+Cómo funciona: Visualizar uso diario → deseo
+Beneficios: Cuantificar ROI → urgencia
+Comparativa: Diferenciar vs alternativas → decisión
+Casos uso: Ver aplicación concreta → identificación
+FAQ: Resolver objeciones → confianza final
+
+text
+
+## 📝 Estructura Recomendada de Landing
+Hero (propuesta + CTA)
+
+Problema (dolor agencia multi-cliente)
+
+Cómo cambia (before/after)
+
+Dashboard real (screenshots + explicación)
+
+Cómo funciona (4 pasos clave)
+
+Beneficios cuantificables
+
+Diferencia vs ChatGPT/Notion/Drive
+
+Casos de uso (3-5 tipos agencia)
+
+FAQ (12 preguntas reales)
+
+CTA final
+
+text
+
+## 🎨 Estilo Visual Recomendado
+Clean SaaS B2B (Vercel, Linear, Supabase)
+
+Hero con screenshot dashboard principal
+
+Sección "cómo funciona" con screenshots reales
+
+Colores sobrios (no gradientes IA)
+
+Tipografía clara (Inter, Satoshi, Geist)
+
+Cards limpias, no iconos en círculos
+
+text
+
+---
+
+*Esta regla se aplica a toda comunicación sobre Zetavoice: landing, emails, ads, presentaciones, demos.*
