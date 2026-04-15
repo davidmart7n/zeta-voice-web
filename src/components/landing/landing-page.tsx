@@ -426,14 +426,11 @@ export function LandingPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.95, ease: easeOut }}
         >
-          <h2 className="text-3xl font-semibold tracking-tight text-white">CTA final para cerrar la landing</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-white">
+            Escala tu agencia sin multiplicar el caos operativo.
+          </h2>
           <p className="mt-3 max-w-3xl text-zinc-200">
-            Mejor CTA para trafico frio: <strong>Solicitar demo</strong>. Mejor CTA para trafico caliente:{" "}
-            <strong>Ver como funciona</strong>. Mensaje para captar demos sin agresividad:{" "}
-            <strong>
-              Veamos tu flujo actual y te mostramos en 20 minutos donde puedes reducir retrabajo sin perder control
-              editorial.
-            </strong>
+            Veamos tu flujo actual y te mostramos en 20 minutos dónde puedes reducir el retrabajo sin perder el control editorial de tus marcas.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <MotionButton variant="primary" onClick={() => setDemoModalOpen(true)}>
