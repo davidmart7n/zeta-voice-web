@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zetavoice | Content Operations. Scaled.",
+  title: "Zeta Voice | Content Operations Platform.",
   description:
     "Plataforma de operacion de contenido multi-cliente para agencias: contexto por marca, generacion asistida y aprobacion en un solo flujo.",
   icons: {
