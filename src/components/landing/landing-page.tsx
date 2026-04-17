@@ -61,8 +61,8 @@ function MotionButton({
   const reduce = useReducedMotion();
   const base =
     variant === "primary"
-      ? "rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-zinc-950 hover:bg-cyan-300"
-      : "rounded-xl border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-100 hover:border-zinc-500 hover:bg-zinc-900";
+      ? "rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-zinc-950 hover:cursor-pointer hover:bg-cyan-300"
+      : "rounded-xl border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-100 hover:cursor-pointer hover:border-zinc-500 hover:bg-zinc-900";
   const hover =
     reduce === true
       ? undefined
