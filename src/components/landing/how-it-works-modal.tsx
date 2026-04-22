@@ -5,6 +5,9 @@ import { useEffect, useId } from "react";
 import { createPortal } from "react-dom";
 import { easeOut } from "./landing-motion";
 
+const tutorialVideoUrl = "https://youtu.be/SUlCdcRrjKw";
+const tutorialVideoEmbedUrl = "https://www.youtube.com/embed/SUlCdcRrjKw";
+
 type HowItWorksModalProps = {
   open: boolean;
   onClose: () => void;
@@ -53,7 +56,7 @@ export function HowItWorksModal({ open, onClose, onNotifyMe }: HowItWorksModalPr
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descId}
-        className="relative z-10 w-full max-w-md rounded-2xl border border-zinc-700 bg-zinc-900 p-6 shadow-2xl shadow-cyan-900/20 ring-1 ring-cyan-400/10"
+        className="relative z-10 w-full max-w-3xl rounded-2xl border border-zinc-700 bg-zinc-900 p-6 shadow-2xl shadow-cyan-900/20 ring-1 ring-cyan-400/10"
         initial={reduce ? false : { opacity: 0, y: 16, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.35, ease: easeOut }}
@@ -61,11 +64,11 @@ export function HowItWorksModal({ open, onClose, onNotifyMe }: HowItWorksModalPr
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2 id={titleId} className="text-lg font-semibold text-white">
-              Próximamente: mini tutorial
+              Demo tutorial de Zetavoice
             </h2>
             <p id={descId} className="mt-1 text-sm text-zinc-400">
-              Estamos preparando un recorrido corto por el flujo (contexto → borrador → revisión). Mientras tanto,
-              puedes pedir una demo y te mostramos la plataforma en vivo.
+              Mira el recorrido completo del flujo de contexto a borrador y revision; si quieres, agenda una demo
+              personalizada para tu operacion.
             </p>
           </div>
           <button
@@ -80,6 +83,18 @@ export function HowItWorksModal({ open, onClose, onNotifyMe }: HowItWorksModalPr
           </button>
         </div>
 
+        <div className="mt-5 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950">
+          <iframe
+            src={tutorialVideoEmbedUrl}
+            title="Demo tutorial de Zetavoice"
+            className="aspect-video w-full"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+
         <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
           <button
             type="button"
@@ -90,13 +105,20 @@ export function HowItWorksModal({ open, onClose, onNotifyMe }: HowItWorksModalPr
           </button>
           <button
             type="button"
+            onClick={() => window.open(tutorialVideoUrl, "_blank", "noopener,noreferrer")}
+            className="rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-zinc-950 hover:bg-cyan-300"
+          >
+            Ver en YouTube
+          </button>
+          <button
+            type="button"
             onClick={() => {
               onClose();
               onNotifyMe();
             }}
-            className="rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-zinc-950 hover:bg-cyan-300"
+            className="rounded-xl border border-cyan-400/40 bg-cyan-500/10 px-4 py-2.5 text-sm font-semibold text-cyan-100 hover:border-cyan-300/60 hover:bg-cyan-500/20"
           >
-            Avísame
+            Solicitar demo personalizada
           </button>
         </div>
       </motion.div>
