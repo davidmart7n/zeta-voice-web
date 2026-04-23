@@ -5,8 +5,8 @@ import { useEffect, useId } from "react";
 import { createPortal } from "react-dom";
 import { easeOut } from "./landing-motion";
 
-const tutorialVideoUrl = "https://youtu.be/SUlCdcRrjKw";
-const tutorialVideoEmbedUrl = "https://www.youtube.com/embed/SUlCdcRrjKw";
+const tutorialVideoUrl = "https://youtu.be/TFfeSGQjMd0";
+const tutorialVideoEmbedUrl = "https://www.youtube.com/embed/TFfeSGQjMd0";
 
 type HowItWorksModalProps = {
   open: boolean;
