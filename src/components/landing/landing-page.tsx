@@ -112,24 +112,24 @@ export function LandingPage() {
               variants={heroStagger.item}
               className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200"
             >
-              Infraestructura de crecimiento para empresas
+              Sistema de crecimiento para empresas
             </motion.p>
             <motion.h1
               variants={heroStagger.item}
               className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl"
             >
-              Convierte el conocimiento de tu empresa en autoridad, leads y sistema.
+              El motor de contenido B2B que tu empresa necesita.
             </motion.h1>
             <motion.p
               variants={heroStagger.item}
               className="max-w-2xl text-lg text-zinc-300 md:text-xl"
             >
-              Tu cuenta de empresa publica en LinkedIn cada semana con contenido listo para salir y foco en
-              resultados: mas autoridad visible, mas leads cualificados y mas ingresos.
+              Publica en LinkedIn de forma constante y estrategica. Genera confianza y demanda sin sobrecargar
+              a tus fundadores.
             </motion.p>
             <motion.div variants={heroStagger.item} className="flex flex-col gap-3 sm:flex-row">
               <MotionButton variant="primary" onClick={() => setDemoModalOpen(true)}>
-                Agendar sesion estrategica
+                Agendar Llamada de Unboarding
               </MotionButton>
               <MotionButton variant="secondary" onClick={() => setHowItWorksModalOpen(true)}>
                 Ver como funciona
@@ -465,10 +465,10 @@ export function LandingPage() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <MotionButton variant="primary" onClick={() => setDemoModalOpen(true)}>
-              Agendar sesion estrategica
+              Agendar llamada de unboarding
             </MotionButton>
             <MotionButton variant="secondary" onClick={() => setHowItWorksModalOpen(true)}>
-              Ver como funciona
+              Ver cómo funciona
             </MotionButton>
           </div>
         </motion.div>
