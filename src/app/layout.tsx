@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zeta Voice | Content Operations Platform.",
+  title: "Zeta Voice | Company Content. Systematized.",
   description:
-    "Plataforma de operacion de contenido multi-cliente para agencias: contexto por marca, generacion asistida y aprobacion en un solo flujo.",
+    "Ecosistema B2B para founders y CEOs: centraliza el contexto de tu empresa, sistematiza contenido, activa IA con datos propios y crece con acompanamiento estrategico.",
   icons: {
     icon: "/logo-4k-zeta-makers.png",
   },
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

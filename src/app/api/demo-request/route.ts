@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 
 const PROFILE_VALUES = new Set([
   "empresa",
-  "agencia",
-  "freelancer",
-  "business_owner",
+  "founder_ceo",
+  "director_clevel",
+  "marketing_lead",
   "interesado",
 ]);
 

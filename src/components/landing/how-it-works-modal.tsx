@@ -64,11 +64,11 @@ export function HowItWorksModal({ open, onClose, onNotifyMe }: HowItWorksModalPr
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2 id={titleId} className="text-lg font-semibold text-white">
-              Demo tutorial de Zetavoice
+              Como funciona el ecosistema Zetavoice
             </h2>
             <p id={descId} className="mt-1 text-sm text-zinc-400">
-              Mira el recorrido completo del flujo de contexto a borrador y revision; si quieres, agenda una demo
-              personalizada para tu operacion.
+              Mira el recorrido completo desde contexto de empresa hasta publicacion; si encaja con tu objetivo, agenda
+              una sesion estrategica para tu negocio.
             </p>
           </div>
           <button
@@ -86,7 +86,7 @@ export function HowItWorksModal({ open, onClose, onNotifyMe }: HowItWorksModalPr
         <div className="mt-5 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950">
           <iframe
             src={tutorialVideoEmbedUrl}
-            title="Demo tutorial de Zetavoice"
+            title="Como funciona el ecosistema Zetavoice"
             className="aspect-video w-full"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

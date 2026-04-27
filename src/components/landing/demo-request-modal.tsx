@@ -7,9 +7,9 @@ import { easeOut } from "./landing-motion";
 
 const profileOptions = [
   { value: "empresa", label: "Empresa" },
-  { value: "agencia", label: "Agencia" },
-  { value: "freelancer", label: "Freelancer" },
-  { value: "business_owner", label: "Business owner" },
+  { value: "founder_ceo", label: "Founder / CEO" },
+  { value: "director_clevel", label: "Director / C-Level" },
+  { value: "marketing_lead", label: "Responsable de marketing" },
   { value: "interesado", label: "Interesado" },
 ] as const;
 
@@ -43,7 +43,7 @@ export function DemoRequestModal({ open, onClose, onSubmit, title, description }
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [companyName, setCompanyName] = useState("");
-  const [profileType, setProfileType] = useState<DemoProfileType>("agencia");
+  const [profileType, setProfileType] = useState<DemoProfileType>("empresa");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -53,7 +53,7 @@ export function DemoRequestModal({ open, onClose, onSubmit, title, description }
     setEmail("");
     setPhone("");
     setCompanyName("");
-    setProfileType("agencia");
+    setProfileType("empresa");
     setSubmitting(false);
     setDone(false);
     setError(null);
@@ -183,7 +183,7 @@ export function DemoRequestModal({ open, onClose, onSubmit, title, description }
             </div>
             <div>
               <label htmlFor="demo-company" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                Nombre de compañía o agencia (Opcional)
+                Nombre de empresa (Opcional)
               </label>
               <input
                 id="demo-company"
@@ -193,7 +193,7 @@ export function DemoRequestModal({ open, onClose, onSubmit, title, description }
                 value={companyName}
                 onChange={(e) => setCompanyName(e.target.value)}
                 className="mt-1.5 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-                placeholder="Tu compañía o agencia"
+                placeholder="Tu empresa"
               />
             </div>
             <div>

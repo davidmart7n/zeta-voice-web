@@ -8,89 +8,89 @@ export type HeroVariant = {
 
 export const positioning = {
   central:
-    "Plataforma de operacion de contenido multi-cliente para agencias que centraliza contexto, generacion asistida y aprobacion en un solo flujo.",
+    "Ecosistema de crecimiento para founders y CEOs que centraliza el contexto de su empresa, sistematiza contenido y activa una capa de IA propia con acompanamiento estrategico.",
   alternatives: [
-    "Sistema operativo editorial para agencias que producen para varias marcas.",
-    "Infraestructura de contenido multi-marca para reducir retrabajo y mantener consistencia.",
-    "Centro de control para escalar produccion sin perder criterio humano en revision.",
+    "Infraestructura operativa para convertir conocimiento interno en autoridad visible y oportunidades comerciales.",
+    "Sistema para que la cuenta de empresa publique con consistencia sin depender del tiempo del founder.",
+    "Operacion de contenido, IA aplicada y acompanamiento continuo dentro de un unico ecosistema.",
   ],
   whatItIs:
-    "Zetavoice es una plataforma para agencias que organiza el contexto por cliente y convierte el flujo contexto -> borrador -> revision en produccion predecible.",
+    "Zetavoice organiza el flujo contexto -> borrador -> revision -> publicacion para empresas B2B que quieren crecer con mas control, continuidad y criterio.",
   recommendation:
-    "Salir primero con el angulo de agencias de marketing y social media: el dolor multi-cliente es mas visible, urgente y facil de demostrar en demo.",
+    "Priorizar founders y duenos de negocio: la propuesta de ecosistema (contenido + IA + consultoria + comunidad) tiene mayor valor percibido y una venta mas directa.",
 };
 
 export const heroHeadlines = [
-  "Produce para varios clientes sin mezclar una sola marca.",
-  "Escala contenido multi-cliente con orden, no con mas caos.",
-  "La operacion de contenido de tu agencia, en un solo sistema.",
-  "De prompts sueltos a produccion editorial predecible.",
-  "Coordina contexto, borradores y aprobacion desde un mismo dashboard.",
-  "Menos retrabajo por marca. Mas entregables por semana.",
-  "Centraliza la operacion diaria de contenido para todos tus clientes.",
-  "La forma seria de producir contenido multi-marca.",
-  "Controla la voz de cada cliente mientras aceleras produccion.",
-  "Convierte procesos dispersos en un flujo operativo unico.",
-  "Produccion de contenido para agencias sin perder control editorial.",
-  "Una base operativa para crecer sin rehacer prompts cada dia.",
-  "Gestiona mas cuentas sin romper tu calidad de entrega.",
-  "Del caos entre Drive, Notion y chats a un flujo claro.",
-  "Infraestructura de contenido para agencias que operan de verdad.",
+  "Convierte el conocimiento de tu empresa en autoridad, leads y sistema.",
+  "La cuenta de tu empresa puede publicar con continuidad sin improvisacion.",
+  "No necesitas mas ideas: necesitas una infraestructura de contenido.",
+  "Centraliza contexto, activa IA propia y opera con criterio cada semana.",
+  "De contenido irregular a un canal de autoridad que si genera demanda.",
+  "Haz que LinkedIn trabaje para tu empresa, no contra tu agenda.",
+  "Menos caos operativo. Mas visibilidad y mas oportunidades comerciales.",
+  "La forma seria de crecer con contenido cuando eres founder.",
+  "Sistema, control y acompanamiento para liderar con IA en tu nicho.",
+  "Tu empresa no necesita otro generador; necesita una operacion completa.",
+  "Publica con voz de marca consistente sin depender de procesos manuales.",
+  "Activa un ecosistema de crecimiento para tu empresa en semanas, no meses.",
+  "Convierte documentos, notas y experiencia en un activo vivo de negocio.",
+  "Contenido, IA y acompanamiento estrategico en un unico flujo.",
+  "Company Content. Systematized.",
 ];
 
 export const heroSubtitles = [
-  "Guarda contexto por cliente, reutiliza plantillas y revisa cada pieza antes de publicar.",
-  "Zetavoice organiza el trabajo multi-cliente para que tu equipo produzca mas con consistencia.",
-  "Cada marca con su contexto, cada pieza con su flujo de revision y aprobacion.",
-  "Centraliza fuentes, lineamientos y borradores en una sola operacion editorial.",
-  "No es otro generador de posts: es un sistema para producir con control.",
-  "Alinea velocidad y calidad con un flujo unico para todo tu equipo.",
-  "Evita repetir prompts y reduce iteraciones con estructura operativa por cliente.",
-  "Desde onboarding de marca hasta cola de aprobacion en un solo lugar.",
-  "Haz que la produccion dependa menos de memoria y mas de sistema.",
-  "Escala cuentas activas sin multiplicar friccion interna.",
+  "Unifica contexto de empresa, generacion de contenido y aprobacion en una operacion clara y repetible.",
+  "Zetavoice combina plataforma, consultoria, masterclass y comunidad para que crezcas con criterio.",
+  "Tu empresa publica con voz coherente mientras construyes una capa de IA con tus propios datos.",
+  "No es un atajo de copy: es infraestructura para operar autoridad y demanda de forma constante.",
+  "Organiza fuentes, narrativa, plantillas y revision en un flujo que no depende de la memoria del equipo.",
+  "Pasa de esfuerzos sueltos a un sistema que aprende en cada iteracion y mejora con el tiempo.",
+  "Convierte LinkedIn en un activo de negocio con control humano y apoyo estrategico continuo.",
+  "Contenido, contexto y decisiones en el mismo lugar para founders que quieren escalar sin perder orden.",
+  "Activa una operacion de crecimiento enfocada en resultados reales: visibilidad, leads y conversaciones.",
+  "Construye ventaja competitiva en IA sin humo, con uso aplicado al dia a dia de tu empresa.",
 ];
 
 export const primaryCtas = [
+  "Agendar sesion estrategica",
   "Solicitar demo",
-  "Ver demo guiada",
-  "Reservar una llamada",
-  "Quiero ver el flujo completo",
-  "Evaluar Zetavoice con mi equipo",
-  "Empezar diagnostico operativo",
+  "Reservar diagnostico de contenido",
+  "Quiero entrar al ecosistema",
+  "Quiero ver mi plan de implementacion",
+  "Evaluar Zetavoice para mi empresa",
 ];
 
 export const secondaryCtas = [
   "Ver como funciona",
-  "Comparar con ChatGPT + Notion + Drive",
-  "Explorar casos de uso",
-  "Revisar FAQ",
-  "Ver ejemplo de flujo multi-cliente",
-  "Descargar checklist operativo",
+  "Ver comparativa completa",
+  "Explorar casos de founders",
+  "Resolver preguntas frecuentes",
+  "Ver el flujo real paso a paso",
+  "Hablar con el equipo",
 ];
 
 export const heroVariants: HeroVariant[] = [
   {
-    title: "La operacion de contenido multi-cliente de tu agencia, por fin en orden.",
+    title: "La infraestructura de crecimiento para founders que quieren autoridad visible.",
     subtitle:
-      "Centraliza contexto de marca, genera borradores alineados y revisa en una cola unica antes de publicar.",
-    primaryCta: "Solicitar demo",
+      "Centraliza el contexto de tu empresa, genera contenido alineado y revisa antes de publicar desde un flujo unico.",
+    primaryCta: "Agendar sesion estrategica",
     secondaryCta: "Ver como funciona",
     visual: "/landing/client-hub.png",
   },
   {
-    title: "Produce mas para cada cliente sin sacrificar voz de marca.",
+    title: "Activa tu IA propia y deja de depender de procesos manuales.",
     subtitle:
-      "Configura onboarding por marca, aplica plantillas reutilizables y controla revision editorial de punta a punta.",
-    primaryCta: "Ver demo guiada",
+      "Sube fuentes de tu negocio, define tu narrativa y opera contenido con consistencia semanal y control humano.",
+    primaryCta: "Solicitar demo",
     secondaryCta: "Comparar alternativas",
     visual: "/landing/generacion-parametros.png",
   },
   {
-    title: "De herramientas sueltas a un flujo de contenido realmente operable.",
+    title: "Contenido, consultoria y comunidad para crecer con ventaja en IA.",
     subtitle:
-      "Conecta fuentes, reglas y aprobacion en un unico sistema pensado para equipos de agencia.",
-    primaryCta: "Reservar llamada",
+      "No solo publicas mejor: aprendes, decides y ejecutas con un ecosistema que evoluciona junto a tu empresa.",
+    primaryCta: "Reservar diagnostico",
     secondaryCta: "Explorar casos de uso",
     visual: "/landing/mapa-producto.png",
   },
@@ -99,118 +99,114 @@ export const heroVariants: HeroVariant[] = [
 export const howItWorks = [
   {
     step: "1",
-    title: "Onboarding por cliente",
-    body: "Sube notas, PDFs, referencias y lineamientos para que cada marca tenga contexto aislado.",
-    image: "/landing/onboarding-fuentes.png",
+    title: "Onboarding de empresa",
+    body: "Conocemos tu empresa, contexto y objetivos comerciales.",
   },
   {
     step: "2",
-    title: "Plantillas por objetivo",
-    body: "Estandariza formatos reutilizables para educacion, autoridad, promocion y mas.",
-    image: "/landing/plantillas.png",
+    title: "Estructura de voz y narrativa",
+    body: "Definimos voz, narrativa y lineas de contenido para LinkedIn.",
   },
   {
     step: "3",
-    title: "Generacion parametrizada",
-    body: "Ajusta tono, red, longitud, formato y creatividad para cada pieza sin rehacer prompts.",
-    image: "/landing/generacion-parametros.png",
+    title: "Produccion de contenido",
+    body: "Generamos piezas listas para publicar con enfoque en autoridad y demanda.",
   },
   {
     step: "4",
-    title: "Revision y aprobacion",
-    body: "Pasa los borradores por una cola clara de pendientes, revisados y publicados.",
-    image: "/landing/cola-aprobacion.png",
+    title: "Revision, aprobacion y publicacion",
+    body: "Tu equipo revisa y aprueba antes de publicar cada pieza.",
   },
 ];
 
 export const useCases = [
   {
-    title: "Agencia de social media multi-cuenta",
-    pain: "Muchos calendarios, multiples tonos y deadlines simultaneos.",
-    outcome: "Centraliza contexto por cuenta y acelera entrega semanal sin mezclar marcas.",
+    title: "Startup B2B en etapa de crecimiento",
+    pain: "Tiene mucho conocimiento interno, pero publica de forma irregular y pierde traccion en LinkedIn.",
+    outcome: "Convierte su expertise en una operacion de contenido constante que genera visibilidad y conversaciones.",
   },
   {
-    title: "Agencia de contenidos",
-    pain: "Briefings dispersos y retrabajo por falta de estructura editorial.",
-    outcome: "Convierte lineamientos en plantillas y crea un flujo repetible por cliente.",
+    title: "Firma de servicios profesionales",
+    pain: "Depende demasiado del founder para comunicar autoridad y activar demanda.",
+    outcome: "Crea un sistema que mantiene una voz corporativa solida sin bloquear la agenda directiva.",
   },
   {
-    title: "Agencia de copywriting",
-    pain: "Cada pieza depende demasiado de memoria y talento individual.",
-    outcome: "Estandariza calidad con contexto vivo, revision y versionado editorial.",
+    title: "Empresa SaaS o tecnologia",
+    pain: "Tiene producto potente, pero su narrativa publica no refleja su valor real.",
+    outcome: "Alinea producto, mensaje y contenido para posicionarse como referencia del nicho.",
   },
   {
-    title: "Estudio creativo",
-    pain: "Cambios de direccion frecuentes y aprobaciones desordenadas.",
-    outcome: "Mantiene trazabilidad de decisiones y reduce friccion entre estrategia y ejecucion.",
+    title: "Negocio tradicional que quiere liderar su categoria",
+    pain: "No tiene estructura para publicar con continuidad y diferenciarse en digital.",
+    outcome: "Activa una presencia de empresa profesional que transmite criterio, orden y liderazgo.",
   },
   {
-    title: "Freelance con cartera recurrente",
-    pain: "Crecimiento bloqueado por administracion manual del contexto.",
-    outcome: "Escala volumen mensual con una base operativa que sostiene consistencia.",
+    title: "Founder que quiere aplicar IA mas alla del contenido",
+    pain: "Prueba herramientas sueltas y no logra convertirlas en una ventaja operativa real.",
+    outcome: "Usa el ecosistema para producir, consultar, aprender y tomar mejores decisiones con IA aplicada.",
   },
 ];
 
 export const faqItems = [
   {
     q: "No puedo hacer esto con ChatGPT y ya?",
-    a: "Con ChatGPT generas piezas sueltas. Zetavoice organiza contexto por cliente, plantillas, flujo editorial y aprobacion en un sistema unico.",
+    a: "Con ChatGPT puedes sacar textos sueltos. Zetavoice te entrega una operacion semanal para publicar con consistencia y convertir visibilidad en leads.",
   },
   {
-    q: "Que pasa con la voz de marca de cada cliente?",
-    a: "Cada cliente tiene onboarding y contexto aislado para evitar mezcla de tono, mensajes y posicionamiento.",
+    q: "Que pasa con la voz de mi empresa?",
+    a: "La definimos desde el onboarding y la mantenemos estable para que tu marca gane autoridad y reconocimiento en tu sector.",
   },
   {
-    q: "Sirve si llevo pocos clientes?",
-    a: "Si, sobre todo para construir proceso desde temprano y evitar caos cuando aumente tu cartera.",
+    q: "Esto sustituye a mi equipo de marketing?",
+    a: "No. Potencia al equipo y reduce friccion para que publiquen mejor y con mas impacto comercial, manteniendo revision humana.",
   },
   {
-    q: "Hace falta entrenar un modelo?",
-    a: "No. Configuras contexto y lineamientos operativos; no necesitas entrenar infraestructura propia.",
+    q: "Que recibo exactamente al contratar?",
+    a: "Contenido semanal para LinkedIn, una voz de marca clara, soporte estrategico y un flujo de trabajo que impulsa autoridad, leads e ingresos.",
   },
   {
-    q: "Sustituye al copywriter o estratega?",
-    a: "No. Acelera produccion y ordena la operacion, pero la decision editorial sigue en tu equipo.",
+    q: "Cuanto tiempo requiere del founder?",
+    a: "Al inicio necesitamos contexto y objetivos. Luego solo validas piezas clave mientras la operacion mantiene continuidad sin cargarte la agenda.",
   },
   {
-    q: "Como se revisa el contenido?",
-    a: "La cola de aprobacion organiza piezas por estado para revisar, ajustar y aprobar antes de publicar.",
+    q: "Como se revisa y aprueba el contenido?",
+    a: "Cada pieza pasa por revision antes de salir para asegurar calidad, mensaje y alineacion con objetivos comerciales.",
   },
   {
-    q: "Puedo usar mis propias plantillas?",
-    a: "Si. Puedes crear y reutilizar plantillas segun objetivos, canales y estilo de cada cliente.",
+    q: "Hace falta entrenar un modelo propio?",
+    a: "No necesitas entrenar desde cero. La capa de IA se alimenta del contexto que subes y evoluciona con tus iteraciones.",
   },
   {
-    q: "Que tipo de agencias aprovechan mas la plataforma?",
-    a: "Agencias de marketing, social media, contenido, copy y estudios creativos con varias cuentas activas.",
+    q: "Para que tipo de empresa encaja mejor?",
+    a: "Para empresas B2B que quieren convertir LinkedIn en un canal serio de autoridad, leads cualificados y oportunidades de venta.",
   },
   {
-    q: "Que pasa si un cliente cambia su enfoque de marca?",
-    a: "Actualizas el contexto del cliente y el equipo mantiene consistencia en nuevas piezas desde ese cambio.",
+    q: "Que pasa si cambiamos foco de negocio o narrativa?",
+    a: "Se actualiza el contexto central y las siguientes piezas se generan alineadas con la nueva direccion.",
   },
   {
-    q: "Como evita el retrabajo interno?",
-    a: "Porque concentra contexto, reglas y flujo de revision en un mismo lugar, reduciendo idas y vueltas.",
+    q: "Como evita el retrabajo y la improvisacion?",
+    a: "Centraliza contexto, estructura de contenido y revisiones en un flujo unico para que el aprendizaje no se pierda.",
   },
   {
-    q: "Puedo usarlo con mi stack actual?",
-    a: "Si. Zetavoice funciona como capa operativa para centralizar la produccion, aunque uses otras herramientas.",
+    q: "Y el ecosistema Zeta Makers donde entra?",
+    a: "Es un extra al contratar: accedes a consultoria, masterclass y comunidad de founders para acelerar decisiones de negocio.",
   },
   {
     q: "Cuanto tarda en verse impacto?",
-    a: "Normalmente en las primeras semanas ya se nota menos friccion, menos repeticion y mayor consistencia.",
+    a: "En pocas semanas suele verse mas consistencia, mas autoridad percibida y un aumento de conversaciones comerciales de calidad.",
   },
 ];
 
 export const microcopy = {
-  placeholder: "Tu email de trabajo",
-  demoButton: "Solicitar demo personalizada",
-  waitlist: "Te avisamos cuando abramos nuevos espacios de onboarding.",
+  placeholder: "tu@empresa.com",
+  demoButton: "Agendar sesion estrategica",
+  waitlist: "Te avisamos cuando abramos nuevos espacios para empresas que quieren crecer con LinkedIn.",
   trialMessages: [
-    "Empieza con un cliente piloto y valida el flujo en menos de una semana.",
-    "Prueba el proceso completo antes de decidir despliegue total.",
-    "Sin compromiso inicial, con acompanamiento de implementacion.",
+    "Empieza con un diagnostico de contexto y objetivos para tu empresa.",
+    "Valida el flujo completo de contenido y aprobacion con tu operativa real.",
+    "Recibe acompanamiento para aplicar IA con criterio de negocio desde el inicio.",
   ],
-  secondaryButtons: ["Ver mapa del producto", "Hablar con ventas", "Ver comparativa completa"],
-  trustLine: "Sin promesas infladas: demo enfocada en tu operacion real y tus cuentas activas.",
+  secondaryButtons: ["Ver como trabajamos", "Hablar con el equipo", "Ver comparativa completa"],
+  trustLine: "Sin promesas vacias: nos enfocamos en resultados reales de autoridad, leads e ingresos.",
 };
