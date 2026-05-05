@@ -116,7 +116,7 @@ export function LandingPage() {
               variants={heroStagger.item}
               className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200"
             >
-              Sistema de crecimiento para empresas y founders
+              Sistema de crecimiento para empresas y Founders
             </motion.p>
             <motion.h1
               variants={heroStagger.item}
@@ -128,8 +128,7 @@ export function LandingPage() {
               variants={heroStagger.item}
               className="max-w-2xl text-lg text-zinc-300 md:text-xl"
             >
-              Publica en LinkedIn de forma constante y estrategica. Genera confianza y demanda sin sobrecargar
-              a tus fundadores.
+              Publica en LinkedIn de forma constante y estrategica. Genera confianza y demanda real sin invertir tiempo ni energía
             </motion.p>
             <motion.div variants={heroStagger.item} className="flex flex-col gap-3 sm:flex-row">
               <MotionButton variant="primary" onClick={() => setDemoModalOpen(true)}>
