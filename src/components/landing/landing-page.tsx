@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { DemoRequestModal } from "./demo-request-modal";
 import { HowItWorksModal } from "./how-it-works-modal";
@@ -22,6 +23,9 @@ import {
 const hoverEase = { duration: 0.55, ease: easeOut };
 
 const sectionClass = "mx-auto w-full max-w-6xl px-6 py-16 md:px-10";
+
+/** Pon a `true` cuando haya vídeo/tutorial en el modal. */
+const SHOW_HOW_IT_WORKS_CTA = false;
 
 function SectionTitle({
   eyebrow,
@@ -112,7 +116,7 @@ export function LandingPage() {
               variants={heroStagger.item}
               className="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-200"
             >
-              Sistema de crecimiento para empresas
+              Sistema de crecimiento para empresas y founders
             </motion.p>
             <motion.h1
               variants={heroStagger.item}
@@ -129,11 +133,13 @@ export function LandingPage() {
             </motion.p>
             <motion.div variants={heroStagger.item} className="flex flex-col gap-3 sm:flex-row">
               <MotionButton variant="primary" onClick={() => setDemoModalOpen(true)}>
-                Agendar Llamada de Unboarding
+                Agendar demo gratuita
               </MotionButton>
-              <MotionButton variant="secondary" onClick={() => setHowItWorksModalOpen(true)}>
-                Ver como funciona
-              </MotionButton>
+              {SHOW_HOW_IT_WORKS_CTA ? (
+                <MotionButton variant="secondary" onClick={() => setHowItWorksModalOpen(true)}>
+                  Ver como funciona
+                </MotionButton>
+              ) : null}
             </motion.div>
             <motion.p variants={heroStagger.item} className="text-sm text-zinc-400">
               {microcopy.trustLine}
@@ -465,14 +471,30 @@ export function LandingPage() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <MotionButton variant="primary" onClick={() => setDemoModalOpen(true)}>
-              Agendar llamada de unboarding
+              Agendar demo gratuita
             </MotionButton>
-            <MotionButton variant="secondary" onClick={() => setHowItWorksModalOpen(true)}>
-              Ver cómo funciona
-            </MotionButton>
+            {SHOW_HOW_IT_WORKS_CTA ? (
+              <MotionButton variant="secondary" onClick={() => setHowItWorksModalOpen(true)}>
+                Ver cómo funciona
+              </MotionButton>
+            ) : null}
           </div>
         </motion.div>
       </motion.section>
+
+      <footer className="border-t border-zinc-800/80 bg-[#07090d]/80">
+        <div className={`${sectionClass} py-10`}>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-zinc-500">Zeta Voice · Zeta Makers</p>
+            <Link
+              href="/privacy-policy"
+              className="text-sm font-medium text-zinc-400 transition-colors hover:text-cyan-300"
+            >
+              Política de privacidad
+            </Link>
+          </div>
+        </div>
+      </footer>
 
       {/* 
       <motion.section className={`${sectionClass} pt-10`} {...scrollReveal}>
@@ -617,14 +639,16 @@ export function LandingPage() {
       </motion.section>
       */}
 
-      <HowItWorksModal
-        open={howItWorksModalOpen}
-        onClose={() => setHowItWorksModalOpen(false)}
-        onNotifyMe={() => {
-          setDemoModalFromTutorial(true);
-          setDemoModalOpen(true);
-        }}
-      />
+      {SHOW_HOW_IT_WORKS_CTA ? (
+        <HowItWorksModal
+          open={howItWorksModalOpen}
+          onClose={() => setHowItWorksModalOpen(false)}
+          onNotifyMe={() => {
+            setDemoModalFromTutorial(true);
+            setDemoModalOpen(true);
+          }}
+        />
+      ) : null}
       <DemoRequestModal
         open={demoModalOpen}
         onClose={() => {

@@ -1,44 +1,196 @@
-# Brandbook: Zeta Voice
+---
+description: "Contexto estratégico, posicionamiento y tono para Zetavoice - ecosistema B2B para founders y sus empresas"
+alwaysApply: true
+---
 
-Este documento define la identidad core y el sistema de diseño de **Zeta Voice** (desarrollado por Zeta Makers). Debe utilizarse como única fuente de la verdad para garantizar la consistencia en todos los puntos de contacto digitales, marketing, producto y comunicación.
+# Zetavoice - Contexto del Producto
 
-## 1. Posicionamiento de Marca
 
-Zeta Voice es un **ecosistema B2B de crecimiento para empresas**, comprado por founders o dueños de negocio.
-No vendemos "otra IA mágica para generar textos", construimos **sistemas de operación de contenido e inteligencia aplicada**. Nos especializamos en resolver el caos organizativo centralizando el contexto de la empresa, su voz de marca, la generación de contenido corporativo y consultas a una capa de IA propia.
+## 🎯 Qué es Zetavoice
+Zetavoice es un **ecosistema B2B para founders y sus empresas** que quieren construir autoridad en LinkedIn, generar demanda y centralizar conocimiento de negocio con inteligencia artificial personalizada.
 
-## 2. Pilares de Identidad
+**NO es solo software de contenido.**  
+**ES una infraestructura de crecimiento** que combina contenido, datos, IA aplicada y acompañamiento para convertir la voz del founder y de la empresa en un activo operativo.
 
-- **Control y Orden (Operativa):** Representamos el fin del caos de documentos, notas sueltas y chats. El valor está en el sistema: contexto centralizado de empresa, trazabilidad total y continuidad semanal predecible.
-- **Pro (Autoridad B2B):** Transmitimos confianza técnica y ejecutiva a los dueños de empresa. Visualmente se traduce en interfaces limpias, espaciados generosos (breathing room) y jerarquía clara. A nivel de comunicación, somos asertivos, directos y huimos del "hype" de la IA.
 
-## 3. Sistema Visual
+## 🎨 Posicionamiento Estratégico
 
-### 3.1. Paleta de Colores
-- **Dark Mode Nativo:** Fondos profundos (tonos carbón, ónix o grises muy oscuros) que proyectan elegancia técnica, reducen la fatiga visual y ponen el foco en el contenido de la empresa.
-- **Acentos Funcionales:** Uso estratégico de colores para llamadas a la acción (CTAs) y estados de interfaz:
-    - **Cian / Teal Vibrante:** Color principal de marca para acciones primarias y elementos de confianza.
-    - **Colores de Estado (Badges):** Tonos suaves (ámbar para pendientes, azul para revisados, verde para publicados) para facilitar la lectura rápida en colas de aprobación.
-    - **Bordes y Superficies:** Grises tenues (`white/5` o `white/10`) para separar contenedores sin añadir ruido.
 
-### 3.2. Estética y UI
-- **Minimalismo SaaS Premium:** Inspirado en referentes B2B modernos (Linear, Vercel). Eliminamos el ruido visual. Si un elemento no tiene una función operativa, se descarta.
-- **Estructura Modular:** Uso de tarjetas (cards), modales limpios y separaciones claras para enfatizar el orden del contexto y los datos de la empresa.
+### Propuesta de valor principal
+"Centraliza el contexto de tu empresa, crea una voz de marca personalizada y usa IA para producir contenido, generar autoridad y activar oportunidades comerciales."
 
-## 4. Tono de Voz
 
-Nuestra comunicación escrita y verbal se rige por tres reglas:
-1. **Asertiva y Segura:** Hablamos desde la autoridad de quien entiende cómo opera un negocio. No decimos "mejora tus posts", decimos "convierte tu conocimiento interno en un activo vivo y constante".
-2. **Directa y Sin Hype:** Menos palabras vacías, más impacto real. No usamos frases como "IA revolucionaria" o "magia". Usamos términos operativos: *flujo, contexto, revisión, sistema, autoridad corporativa*.
-3. **Orientada a Negocio:** Traducimos la complejidad técnica en valor empresarial (horas ahorradas, consistencia de publicación, generación de leads, aumento de visibilidad y acompañamiento).
+### Mensaje clave para toda comunicación
+"Convierte tu conocimiento interno en un sistema vivo que te ayude a publicar, decidir y crecer sin depender de procesos manuales ni de un copywriter aislado."
 
-## 5. Slogan Oficial
 
-> **Company Content. Systematized.**
-*(Infraestructura operativa de contenido. Gestiona el contexto de tu empresa, la generación y la revisión sin perder el control).*
+### Audiencia objetivo
+- Founders de startups y empresas B2B
+- Dueños de negocio con ambición de construir autoridad en LinkedIn
+- CEOs/fundadores que quieren crecer con contenido y liderazgo visible
+- Empresas que quieren una capa de IA propia con sus datos y su contexto
+- Founders que buscan un sistema completo: contenido, consultoría y plataforma
 
-## 6. Principios de Consistencia (Design System)
 
-- **Unificación de Componentes:** Mantener los mismos patrones en toda la landing y el producto (botones limpios, inputs con focus states claros, badges de estado consistentes).
-- **Tokens de Color:** Respetar los valores exactos en todas las plataformas. El acento Cian debe ser inconfundible.
-- **Alineación de Mensaje:** El tono "Pro y Operativo" debe estar presente tanto en el titular de la landing page como en un *empty state* del dashboard o un mensaje de error. Nunca sonamos informales o infantiles.
+## 🛠️ Capacidades del producto (para describir, NO para listar como features)
+Hub centralizado de empresa y contexto
+
+Onboarding específico por negocio (web, PDFs, notas, objetivos, verticales, referencias)
+
+Biblioteca de plantillas reutilizables por objetivo:
+
+- Opinión / POV
+- Educativo
+- Storytelling
+- Autoridad / credibilidad
+- Oferta / promoción
+- Testimonio / caso real
+- Exploración de verticales o ideas de negocio
+
+Generación parametrizada (tono, red social, longitud, creatividad)
+
+Cola de aprobación unificada por marca o proyecto
+
+Flujo completo: contexto → borrador → revisión → publicación
+
+Capa adicional de inteligencia artificial con datos propios para consultas y apoyo estratégico
+
+
+## 💬 Tono y Estilo de Copywriting (OBLIGATORIO)
+✅ SÍ usar:
+
+Claro, directo, profesional
+
+SaaS B2B premium (Linear, Vercel, Stripe)
+
+Centrado en beneficios operativos reales
+
+Lenguaje de negocio: tiempo, control, consistencia, autoridad, leads, ventas, ROI
+
+Específico, creíble, medible
+
+
+❌ NO usar NUNCA:
+
+"Revoluciona tu negocio"
+
+"Lleva tu empresa al siguiente nivel"
+
+"Desata el poder de la IA"
+
+"Contenido en segundos"
+
+"Transformación digital brutal"
+
+Frases vacías / hype / genéricas
+
+Presentar como "generador de posts con IA"
+
+
+## 🎭 Principios de Comunicación
+SIEMPRE enfatizar: contexto por empresa y por founder, no mezcla de mensajes
+
+SIEMPRE hablar de operación, orden, escalabilidad, autoridad y demanda antes que IA
+
+SIEMPRE conectar con dolor real de founders y dueños de negocio que quieren crecer con LinkedIn
+
+NUNCA sobreprometer calidad creativa; es un asistente y una infraestructura, no un reemplazo
+
+SIEMPRE mostrar que respeta el criterio humano de revisión y aprobación
+
+SIEMPRE dejar claro que la IA puede personalizarse con datos propios del negocio
+
+SIEMPRE incorporar la idea de consultoría, masterclass y acompañamiento como parte del ecosistema cuando aplique
+
+
+## 📱 Referencia visual del dashboard (cuando describas UX)
+Dashboard principal: lista de proyectos o marcas con badges de posts pendientes
+
+Onboarding: fuentes, archivos, notas, propuesta de valor, nicho, objetivos, verticales y contexto
+
+Plantillas: biblioteca categorizada por objetivo (Opinión, Educativo, Storytelling...)
+
+Generación: parámetros (tono, red, longitud, creatividad 1-10)
+
+Cola de aprobación: Pendientes → Revisados → Publicados por proyecto
+
+Capa IA propia: consulta de datos del negocio, contexto interno y apoyo para decisiones o ideas de contenido
+
+
+## 🚫 Errores Comunes a Evitar
+❌ NO posicionar como:
+
+"IA que escribe posts automáticamente"
+
+"Generador de contenido viral"
+
+"Herramienta para freelancers sin estrategia"
+
+❌ NO usar copy genérico:
+
+Headlines que podrían servir para cualquier SaaS
+
+Claims sin respaldo operativo
+
+Enfoque en velocidad sobre control, autoridad y crecimiento real
+
+✅ SÍ posicionar como:
+
+Infraestructura operativa para founders y sus empresas
+
+Sistema para producir más sin caos
+
+Plataforma que convierte el conocimiento del negocio en un activo vivo
+
+Ecosistema que une contenido, IA y acompañamiento estratégico
+
+
+## 🎯 Objetivos de Conversión por Sección
+Hero: Entender propuesta en 3 segundos → CTA demo
+Problema: Reconocer dolor propio → confianza
+Cómo funciona: Visualizar uso diario → deseo
+Beneficios: Cuantificar ROI → urgencia
+Comparativa: Diferenciar vs alternativas → decisión
+Casos de uso: Ver aplicación concreta → identificación
+FAQ: Resolver objeciones → confianza final
+
+
+## 📝 Estructura Recomendada de Landing
+Hero (propuesta + CTA)
+
+Problema (dolor de crecer con contenido sin sistema)
+
+Cómo cambia (before/after)
+
+Dashboard real (screenshots + explicación)
+
+Cómo funciona (4 pasos clave)
+
+Beneficios cuantificables
+
+Diferencia vs ChatGPT/Notion/Drive/copywriter tradicional
+
+Casos de uso (3-5 tipos de contenido y consulta de negocio)
+
+FAQ (12 preguntas reales)
+
+CTA final
+
+
+## 🎨 Estilo Visual Recomendado
+Clean SaaS B2B (Vercel, Linear, Supabase)
+
+Hero con screenshot del dashboard principal
+
+Sección "cómo funciona" con screenshots reales
+
+Colores sobrios y premium
+
+Tipografía clara (Inter, Satoshi, Geist)
+
+Cards limpias, no iconos en círculos
+
+
+---
+
+*Esta regla se aplica a toda comunicación sobre Zetavoice para founders y sus empresas: landing, emails, ads, presentaciones y demos.*
