@@ -5,12 +5,12 @@ export type SectionMeta = {
 };
 
 export const hero = {
-  preheader: "El motor de contenido y crecimiento definitivo en LinkedIn.",
+  preheader: "El motor de contenido definitivo para LinkedIn.",
   title:
     "Tu silencio en LinkedIn te está costando oportunidades de negocio cada día.",
   subtitle:
-    "El 90% de los decisores te investigan antes de comprar: Tus cuentas sin calidad están matando la confianza de tus clientes y cerrando la puerta de nuevas oportunidades.",
-  cta: "🟢 Solicita 3 posts gratuitos para tu marca o perfil",
+    "El 90% de los compradores te investigan antes de comprar: tus cuentas están matando la confianza de tus clientes y cerrándote de nuevas oportunidades.",
+  cta: "Obtén 3 posts gratuitos para tu cuenta",
   ctaSubtext:
     "Vemos tu caso en 20 min y te llevas contenido real, sin compromiso.",
   imageSrc: "/landing/zeta-app.png",
