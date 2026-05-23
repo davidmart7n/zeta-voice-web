@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Zeta Makers">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#18181b"/>
+      <stop offset="100%" style="stop-color:#09090b"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="24" fill="url(#bg)"/>
+  <rect x="8" y="8" width="144" height="144" rx="20" fill="none" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="80" y="92" text-anchor="middle" font-family="system-ui, sans-serif" font-size="40" font-weight="600" fill="#a1a1aa">ZM</text>
+</svg>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Caveat, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,10 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: ["500", "600"],
+});
+
 export const metadata: Metadata = {
-  title: "Zeta Voice | Company Content. Systematized.",
+  title: "Zeta Voice | LinkedIn en piloto automático para Founder y Empresa",
   description:
-    "Ecosistema B2B para founders y CEOs: centraliza el contexto de tu empresa, sistematiza contenido, activa IA con datos propios y crece con acompanamiento estrategico.",
+    "Dominamos LinkedIn por ti: Brand Brain, contenido proactivo desde cero y aprobación en un clic desde la Zeta App. Solicita 3 posts gratuitos para tu cuenta.",
   icons: {
     icon: "/logo-4k-zeta-makers.png",
   },
@@ -29,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
