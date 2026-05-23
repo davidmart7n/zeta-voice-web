@@ -114,8 +114,11 @@ export function DemoRequestModal({ open, onClose, onSubmit, title, description }
 
   if (typeof document === "undefined") return null;
 
+  const fieldClass =
+    "mt-1.5 w-full min-w-0 rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-base text-white placeholder:text-zinc-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400 sm:py-2.5 sm:text-sm";
+
   return createPortal(
-    <div className="fixed inset-0 z-50 flex items-end justify-center p-4 sm:items-center sm:p-6">
+    <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-6">
       <motion.button
         type="button"
         aria-label="Cerrar"
@@ -132,158 +135,168 @@ export function DemoRequestModal({ open, onClose, onSubmit, title, description }
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descId}
-        className="relative z-10 w-full max-w-md rounded-2xl border border-zinc-700 bg-zinc-900 p-6 shadow-2xl shadow-cyan-900/20 ring-1 ring-cyan-400/10"
+        className="relative z-10 flex max-h-[min(92dvh,100%)] w-full max-w-md flex-col overflow-hidden rounded-t-2xl border border-zinc-700 border-b-0 bg-zinc-900 shadow-2xl shadow-cyan-900/20 ring-1 ring-cyan-400/10 sm:max-h-[min(90dvh,40rem)] sm:rounded-2xl sm:border-b"
         initial={reduce ? false : { opacity: 0, y: 16, scale: 0.98 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={reduce ? undefined : { opacity: 0, y: 12, scale: 0.98 }}
         transition={{ duration: 0.35, ease: easeOut }}
       >
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h2 id={titleId} className="text-lg font-semibold text-white">
+        <div className="flex shrink-0 items-start justify-between gap-3 border-b border-zinc-800/80 px-4 pb-3 pt-4 sm:border-b-0 sm:px-6 sm:pb-0 sm:pt-6">
+          <div className="min-w-0 pr-1">
+            <h2 id={titleId} className="text-base font-semibold text-white sm:text-lg">
               {title ?? "Solicitar demo"}
             </h2>
-            <p id={descId} className="mt-1 text-sm text-zinc-400">
+            <p id={descId} className="mt-1 text-xs leading-relaxed text-zinc-400 sm:text-sm">
               {description ?? "Déjanos tus datos y te contactamos para coordinar la sesión."}
             </p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white"
+            className="-mr-1 shrink-0 rounded-lg p-2 text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white"
             aria-label="Cerrar formulario"
           >
-            <span aria-hidden className="text-lg leading-none">
+            <span aria-hidden className="text-xl leading-none sm:text-lg">
               ×
             </span>
           </button>
         </div>
 
         {done ? (
-          <div className="mt-6 rounded-xl border border-cyan-400/30 bg-cyan-500/10 p-4 text-sm text-cyan-100">
-            Gracias. Hemos recibido tu solicitud; en breve nos pondremos en contacto por correo o teléfono.
-          </div>
-        ) : (
-          <form className="mt-6 space-y-4" onSubmit={handleSubmit} noValidate>
-            <div>
-              <label htmlFor="demo-name" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                Nombre y apellidos
-              </label>
-              <input
-                ref={firstFieldRef}
-                id="demo-name"
-                name="fullName"
-                type="text"
-                autoComplete="name"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                className="mt-1.5 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-                placeholder="Tu nombre"
-              />
+          <div className="overflow-y-auto overscroll-contain px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-6 sm:pb-6">
+            <div className="rounded-xl border border-cyan-400/30 bg-cyan-500/10 p-4 text-sm text-cyan-100">
+              Gracias. Hemos recibido tu solicitud; en breve nos pondremos en contacto por correo o teléfono.
             </div>
-            <div>
-              <label htmlFor="demo-company" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                Nombre de empresa (Opcional)
-              </label>
-              <input
-                id="demo-company"
-                name="companyName"
-                type="text"
-                autoComplete="organization"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
-                className="mt-1.5 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-                placeholder="Tu empresa"
-              />
-            </div>
-            <div>
-              <label htmlFor="demo-email" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                Correo electrónico
-              </label>
-              <input
-                id="demo-email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="mt-1.5 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-                placeholder="tu@empresa.com"
-              />
-            </div>
-            <div>
-              <label htmlFor="demo-phone" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
-                Teléfono
-              </label>
-              <input
-                id="demo-phone"
-                name="phone"
-                type="tel"
-                autoComplete="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="mt-1.5 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-cyan-400 focus:outline-none focus:ring-1 focus:ring-cyan-400"
-                placeholder="+34 …"
-              />
-            </div>
-            <fieldset className="space-y-2">
-              <legend className="text-xs font-medium uppercase tracking-wide text-zinc-400">¿Cómo te defines?</legend>
-              <div className="grid gap-2 sm:grid-cols-2">
-                {profileOptions.map((opt) => (
-                  <label
-                    key={opt.value}
-                    className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2.5 text-sm transition-colors ${
-                      profileType === opt.value
-                        ? "border-cyan-400/50 bg-cyan-500/10 text-cyan-100"
-                        : "border-zinc-700 bg-zinc-950 text-zinc-300 hover:border-zinc-600"
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="profileType"
-                      value={opt.value}
-                      checked={profileType === opt.value}
-                      onChange={() => setProfileType(opt.value)}
-                      className="border-zinc-600 text-cyan-400 focus:ring-cyan-400"
-                    />
-                    {opt.label}
-                  </label>
-                ))}
-              </div>
-            </fieldset>
-
-            {error ? <p className="text-sm text-red-400">{error}</p> : null}
-
-            <div className="flex flex-col-reverse gap-2 pt-2 sm:flex-row sm:justify-end">
+            <div className="mt-4 flex justify-stretch sm:justify-end">
               <button
                 type="button"
                 onClick={onClose}
-                className="rounded-xl border border-zinc-600 px-4 py-2.5 text-sm font-semibold text-zinc-200 hover:border-zinc-500 hover:bg-zinc-800"
+                className="w-full rounded-xl bg-cyan-400 px-4 py-3 text-sm font-semibold text-zinc-950 hover:bg-cyan-300 sm:w-auto sm:py-2.5"
               >
-                Cancelar
+                Cerrar
               </button>
-              <button
-                type="submit"
-                disabled={submitting}
-                className="rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-zinc-950 hover:bg-cyan-300 disabled:opacity-60"
-              >
-                {submitting ? "Enviando…" : "Enviar solicitud"}
-              </button>
+            </div>
+          </div>
+        ) : (
+          <form
+            className="flex min-h-0 flex-1 flex-col"
+            onSubmit={handleSubmit}
+            noValidate
+          >
+            <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-3 sm:space-y-4 sm:px-6 sm:py-4">
+              <div>
+                <label htmlFor="demo-name" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
+                  Nombre y apellidos
+                </label>
+                <input
+                  ref={firstFieldRef}
+                  id="demo-name"
+                  name="fullName"
+                  type="text"
+                  autoComplete="name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  className={fieldClass}
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div>
+                <label htmlFor="demo-company" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
+                  Empresa <span className="normal-case text-zinc-500">(opcional)</span>
+                </label>
+                <input
+                  id="demo-company"
+                  name="companyName"
+                  type="text"
+                  autoComplete="organization"
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                  className={fieldClass}
+                  placeholder="Tu empresa"
+                />
+              </div>
+              <div>
+                <label htmlFor="demo-email" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
+                  Correo electrónico
+                </label>
+                <input
+                  id="demo-email"
+                  name="email"
+                  type="email"
+                  inputMode="email"
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={fieldClass}
+                  placeholder="tu@empresa.com"
+                />
+              </div>
+              <div>
+                <label htmlFor="demo-phone" className="block text-xs font-medium uppercase tracking-wide text-zinc-400">
+                  Teléfono
+                </label>
+                <input
+                  id="demo-phone"
+                  name="phone"
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className={fieldClass}
+                  placeholder="+34 …"
+                />
+              </div>
+              <fieldset className="space-y-2">
+                <legend className="text-xs font-medium uppercase tracking-wide text-zinc-400">
+                  ¿Cómo te defines?
+                </legend>
+                <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
+                  {profileOptions.map((opt) => (
+                    <label
+                      key={opt.value}
+                      className={`flex min-h-[2.75rem] cursor-pointer items-start gap-1.5 rounded-lg border px-2 py-2 text-xs leading-snug transition-colors sm:min-h-0 sm:items-center sm:gap-2 sm:px-3 sm:py-2.5 sm:text-sm ${
+                        profileType === opt.value
+                          ? "border-cyan-400/50 bg-cyan-500/10 text-cyan-100"
+                          : "border-zinc-700 bg-zinc-950 text-zinc-300 hover:border-zinc-600"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="profileType"
+                        value={opt.value}
+                        checked={profileType === opt.value}
+                        onChange={() => setProfileType(opt.value)}
+                        className="mt-0.5 shrink-0 border-zinc-600 text-cyan-400 focus:ring-cyan-400 sm:mt-0"
+                      />
+                      <span className="min-w-0 break-words">{opt.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            </div>
+
+            <div className="shrink-0 space-y-2 border-t border-zinc-800 bg-zinc-900 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6 sm:py-4">
+              {error ? <p className="text-sm text-red-400">{error}</p> : null}
+              <div className="flex flex-col gap-2 sm:flex-row sm:justify-end">
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full rounded-xl bg-cyan-400 px-4 py-3 text-sm font-semibold text-zinc-950 hover:bg-cyan-300 disabled:opacity-60 sm:w-auto sm:py-2.5"
+                >
+                  {submitting ? "Enviando…" : "Enviar solicitud"}
+                </button>
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="w-full rounded-xl border border-zinc-600 px-4 py-3 text-sm font-semibold text-zinc-200 hover:border-zinc-500 hover:bg-zinc-800 sm:w-auto sm:py-2.5"
+                >
+                  Cancelar
+                </button>
+              </div>
             </div>
           </form>
         )}
-
-        {done ? (
-          <div className="mt-4 flex justify-end">
-            <button
-              type="button"
-              onClick={onClose}
-              className="rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-zinc-950 hover:bg-cyan-300"
-            >
-              Cerrar
-            </button>
-          </div>
-        ) : null}
       </motion.div>
     </div>,
     document.body,
