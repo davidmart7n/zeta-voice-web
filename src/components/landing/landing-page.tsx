@@ -44,22 +44,6 @@ export function LandingPage() {
         onClose={() => setDemoModalOpen(false)}
         title={demoModal.title}
         description={demoModal.description}
-        onSubmit={async (data) => {
-          const r = await fetch("/api/demo-request", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              ...data,
-              source: "demo_cta",
-            }),
-          });
-          const body = (await r.json().catch(() => ({}))) as { error?: string };
-          if (!r.ok) {
-            throw new Error(
-              typeof body.error === "string" ? body.error : "No se pudo enviar. Inténtalo de nuevo.",
-            );
-          }
-        }}
       />
     </main>
   );

@@ -13,6 +13,7 @@ type Body = {
   email?: unknown;
   phone?: unknown;
   profileType?: unknown;
+  companyName?: unknown;
   source?: unknown;
 };
 
@@ -39,6 +40,7 @@ export async function POST(request: Request) {
   const fullName = typeof json.fullName === "string" ? json.fullName.trim() : "";
   const email = typeof json.email === "string" ? json.email.trim() : "";
   const phone = typeof json.phone === "string" ? json.phone.trim() : "";
+  const companyName = typeof json.companyName === "string" ? json.companyName.trim() : "";
   const profileType = typeof json.profileType === "string" ? json.profileType : "";
   const source =
     typeof json.source === "string" && json.source.length <= 64 ? json.source.trim() : "";
@@ -56,6 +58,7 @@ export async function POST(request: Request) {
     email,
     phone,
     profileType,
+    ...(companyName ? { companyName } : {}),
     ...(source ? { source } : {}),
     ...(ingestSecret ? { ingestSecret } : {}),
   };
