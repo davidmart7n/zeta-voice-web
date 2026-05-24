@@ -13,7 +13,7 @@ export const hero = {
   cta: "Obtén 3 posts gratuitos para tu cuenta",
   ctaSubtext:
     "Vemos tu caso en 20 min y te llevas contenido real, sin compromiso",
-  imageSrc: "/landing/zeta-app.png",
+  imageSrc: "/landing/antes-despues-voice.png",
   imageAlt: "Vista principal del hub de clientes de Zeta Voice",
 };
 
