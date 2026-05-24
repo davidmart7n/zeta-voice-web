@@ -7,7 +7,7 @@ export type SectionMeta = {
 export const hero = {
   preheader: "El motor de contenido definitivo para LinkedIn",
   title:
-    "Tu silencio en LinkedIn te está costando oportunidades de negocio cada día",
+    "Tu silencio en LinkedIn te está costando clientes cada día",
   subtitle:
     "El 90% de los compradores te investigan antes de comprar: tus cuentas están matando la confianza de tus clientes y cerrándote de nuevas oportunidades",
   cta: "Obtén 3 posts gratuitos para tu cuenta",
@@ -19,7 +19,7 @@ export const hero = {
 
 export const realitySection: SectionMeta = {
   eyebrow: "El coste del silencio",
-  title: "Cada día en silencio te está costando clientes",
+  title: "Cada día en silencio te está costando ventas",
   subtitle: "",
 };
 
