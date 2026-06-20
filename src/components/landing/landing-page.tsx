@@ -21,7 +21,7 @@ export function LandingPage() {
   const openDemo = () => setDemoModalOpen(true);
 
   return (
-    <main className="relative overflow-hidden bg-[#07090d] text-zinc-100">
+    <main className="relative overflow-x-clip overflow-y-hidden bg-[#07090d] text-zinc-100">
       <div
         className="pointer-events-none absolute inset-x-0 top-0 h-[min(70vh,720px)] bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(34,211,238,0.12),transparent_55%)]"
         aria-hidden

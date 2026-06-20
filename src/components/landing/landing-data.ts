@@ -250,7 +250,7 @@ export const comparisonRows = [
 ];
 
 export const foundersSection: SectionMeta = {
-  eyebrow: "Nota de los Founders",
+  eyebrow: "Del fundador",
   title: "",
   subtitle: "",
 };
@@ -263,32 +263,66 @@ export type FounderProfile = {
   signature: string;
 };
 
+export type ScenePhoto = {
+  src: string;
+  alt: string;
+  label: string;
+  aspect: "horizontal" | "vertical";
+  colSpan?: number;
+};
+
 export const founders = {
-  caption: "David & Adri, Cofounders de Zeta Makers",
-  teamImageSrc: "/landing/adri-y-david.jpeg",
-  teamImageAlt: "David y Adri, cofundadores de Zeta Makers",
-  noteTitle: "Por qué hacemos esto",
+  noteTitle: "Por qué construí esto",
   noteParagraphs: [
-    "Como fundadores, sabemos perfectamente lo que cuesta delegar la voz de un negocio. Por eso creamos Zeta Voice: no para ser otra agencia de marketing que te pide briefs semanales, sino para activar un sistema proactivo que entienda tu sector y trabaje de verdad para ti.",
-    "Si tu LinkedIn está en silencio, estás perdiendo clientes que te investigan en la sombra en este mismo instante. No queremos venderte humo ni hacerte perder el tiempo en reuniones eternas. Agenda una sesión de 20 minutos con nosotros, analizamos tu caso y te llevarás 3 posts reales creados desde cero para tus cuentas. Si lo vemos, planeamos tu Onboarding a Zeta Voice; si no, te vas con 3 publicaciones profesionales para tu perfil. Así de fácil.",
+    "Mi caso es tan peculiar, como, en el fondo, común: Me encantaba crear contenido en redes, pero cuando el día a día de la empresa me absorbió, tuve que dejarlo por falta de tiempo. Y obviamente, me dio mucha rabia. Pero eso me hizo, con el tiempo, decidir unir mis tres pasiones —la tecnología, las redes y el bussiness— para crear Zeta Voice. Porque nadie debería tener que elegir entre hacer crecer su proyecto o tener presencia donde se mueven sus clientes.",
+    "Construí esto para que LinkedIn deje de ser un desierto o un desgaste sin calidad y pase a ser un canal de comunicación bajo tu control que te traiga oportunidades reales. Con IA aplicada a potenciar tu marca. Si tu perfil está en silencio, estás perdiendo seguidores y clientes ahora mismo. Si no, estás perdiendo tiempo y calidad en tus posts. Esa es la realidad.",
   ],
-  jointSignature: "David & Adri",
-  members: [
+  founder: {
+    name: "David",
+    imageSrc: "/landing/grabando-corporativo-vertical.png",
+    imageAlt: "David Martín, fundador de Zeta Makers, grabando contenido",
+    linkedIn: "https://www.linkedin.com/in/david-mart%C3%ADn-encuentra",
+    signature: "David Martín",
+  } satisfies FounderProfile,
+  scenePhotos: [
     {
-      name: "David",
-      imageSrc: "/landing/foto-david.jpg",
-      imageAlt: "David Martín, cofundador de Zeta Makers, en estudio de radio",
-      linkedIn: "https://www.linkedin.com/in/david-mart%C3%ADn-encuentra",
-      signature: "David Martín",
+      src: "/landing/grabando-horizontal.png",
+      alt: "David grabando contenido de vídeo",
+      label: "Grabando",
+      aspect: "horizontal",
+      colSpan: 2,
     },
     {
-      name: "Adri",
-      imageSrc: "/landing/foto-adri.jpg",
-      imageAlt: "Adrián Martín, cofundador de Zeta Makers",
-      linkedIn: "https://www.linkedin.com/in/adrianmartin-consuegraj/",
-      signature: "Adrián Martín",
+      src: "/landing/grabando-corporativo-vertical.png",
+      alt: "David grabando contenido corporativo vertical",
+      label: "Grabando",
+      aspect: "vertical",
     },
-  ] satisfies FounderProfile[],
+    {
+      src: "/landing/perfil-tiktok.PNG",
+      alt: "Perfil de TikTok de David, creador de contenido",
+      label: "TikTok Fútbol",
+      aspect: "vertical",
+    },
+    {
+      src: "/landing/programando-norrsken.jpg",
+      alt: "David en un espacio de trabajo Norrsken",
+      label: "Tech",
+      aspect: "vertical",
+    },
+    {
+      src: "/landing/programando-terraza.jpg",
+      alt: "David programando al aire libre en una terraza",
+      label: "Visión",
+      aspect: "vertical",
+    },
+{
+      src: "/landing/programando-cafeteria.jpg",
+      alt: "David trabajando en una cafetería",
+      label: "Pasión",
+      aspect: "vertical",
+    },
+  ] satisfies ScenePhoto[],
 };
 
 export const faqSection: SectionMeta = {

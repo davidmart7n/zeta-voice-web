@@ -2,22 +2,16 @@
 
 import {
   motion,
-  useMotionTemplate,
-  useMotionValue,
   useReducedMotion,
-  useSpring,
 } from "framer-motion";
 import Image from "next/image";
-import { useCallback, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   founders,
   foundersSection,
-  type FounderProfile,
 } from "../landing-data";
 import { useScrollReveal } from "../landing-motion";
-import { hoverEase, sectionClass } from "./constants";
-
-const portraitSize = "w-[10.5rem] sm:w-[11.5rem]";
+import { sectionClass } from "./constants";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -32,189 +26,180 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function FounderPortrait({
-  member,
-  tilt,
-  baseRotate,
-  offsetClass,
-  zClass,
-  priority,
-}: {
-  member: FounderProfile;
-  tilt: number;
-  baseRotate: number;
-  offsetClass: string;
-  zClass: string;
-  priority?: boolean;
-}) {
+function ScenePhotoStrip() {
   const reduce = useReducedMotion();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const ignoreInitialScroll = useRef(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ignoreInitialScroll.current = false;
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleScroll = () => {
+      if (ignoreInitialScroll.current) return;
+      if (el.scrollLeft > 10) {
+        setHasScrolled(true);
+      }
+    };
+
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const colSpanClass: Record<number, string> = {
+    1: "col-span-1",
+    2: "col-span-2",
+    3: "col-span-3",
+  };
+
+  const aspectClass: Record<number, string> = {
+    1: "aspect-[3/4]",
+    2: "aspect-[16/9]",
+    3: "aspect-[21/9]",
+  };
 
   return (
-    <motion.div
-      className={`group/photo relative shrink-0 ${portraitSize} ${offsetClass} ${zClass}`}
-      style={{ rotate: baseRotate }}
-      whileHover={
-        reduce
-          ? undefined
-          : {
-              y: -12,
-              rotate: 0,
-              scale: 1.04,
-              zIndex: 40,
-            }
-      }
-      transition={hoverEase}
-    >
-      <div className="pointer-events-none absolute -inset-3 rounded-3xl bg-cyan-400/0 opacity-0 blur-2xl transition-opacity duration-500 group-hover/photo:bg-cyan-400/25 group-hover/photo:opacity-100" />
-      <div className="relative overflow-hidden rounded-2xl border border-zinc-700/80 bg-zinc-900 shadow-2xl shadow-black/50 ring-1 ring-white/5 transition-[border-color,box-shadow] duration-500 group-hover/photo:border-cyan-400/55 group-hover/photo:shadow-cyan-950/40">
-        <motion.div
-          className="relative aspect-[4/5] w-full overflow-hidden"
-          style={reduce ? undefined : { rotate: tilt }}
-          whileHover={reduce ? undefined : { scale: 1.07 }}
-          transition={hoverEase}
+    <>
+      <div className="relative mt-6 w-full sm:hidden">
+        <div
+          ref={scrollRef}
+          className="flex items-start w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto pb-2 scrollbar-hide"
         >
-          <Image
-            src={member.imageSrc}
-            alt={member.imageAlt}
-            width={280}
-            height={350}
-            className="h-full w-full object-cover object-top"
-            sizes="(max-width: 640px) 42vw, 184px"
-            priority={priority}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/10 to-transparent opacity-60 transition-opacity duration-500 group-hover/photo:opacity-90" />
-          <span className="absolute bottom-3 left-3 translate-y-1.5 rounded-full border border-cyan-400/30 bg-zinc-950/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-cyan-200 opacity-0 backdrop-blur-sm transition-all duration-500 group-hover/photo:translate-y-0 group-hover/photo:opacity-100">
-            {member.name}
+          {founders.scenePhotos.map((photo, index) => {
+            const fromLeft = index % 2 === 0;
+            const isFirst = index === 0;
+            const isLast = index === founders.scenePhotos.length - 1;
+
+            return (
+              <motion.div
+                key={photo.src}
+                initial={reduce ? false : { opacity: 0, x: fromLeft ? -30 : 30 }}
+                whileInView={reduce ? undefined : { opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.08,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className={[
+                  photo.aspect === "horizontal" ? "w-[90vw]" : "w-[80vw]",
+                  "shrink-0 snap-center group/scene relative overflow-hidden rounded-xl border border-zinc-800/60 bg-zinc-900 ring-1 ring-white/[0.03]",
+                  isFirst ? "ml-[10vw]" : "",
+                  isLast ? "mr-[10vw]" : "",
+                ].join(" ")}
+              >
+                <div className={`relative ${photo.aspect === "horizontal" ? "aspect-[16/9]" : "aspect-[4/5]"} w-full`}>
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover"
+                    sizes={photo.aspect === "horizontal" ? "90vw" : "80vw"}
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent opacity-50" />
+                </div>
+                <span className="absolute bottom-2 left-2 rounded-full border border-cyan-400/25 bg-zinc-950/80 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-cyan-300/90 backdrop-blur-sm">
+                  {photo.label}
+                </span>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <div
+          className={[
+            "pointer-events-none absolute bottom-4 right-4 z-10 flex items-center gap-1 rounded-full border border-cyan-400/30 bg-zinc-950/90 px-3 py-1.5 backdrop-blur-sm transition-opacity duration-300",
+            hasScrolled ? "opacity-0" : "opacity-100",
+          ].join(" ")}
+        >
+          <span className="text-[10px] font-medium uppercase tracking-wider text-cyan-300/90">
+            Desliza
           </span>
-        </motion.div>
+          <motion.svg
+            className="h-3.5 w-3.5 text-cyan-400"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            animate={reduce ? {} : { x: [0, 4, 0] }}
+            transition={{
+              duration: 1.2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </motion.svg>
+        </div>
       </div>
-    </motion.div>
+
+      <div className="mt-6 hidden grid grid-cols-3 gap-2 sm:gap-3 sm:grid">
+        {founders.scenePhotos.map((photo, index) => {
+          const span = photo.colSpan ?? 1;
+          const isHovered = hoveredIndex === index;
+          const hasHover = hoveredIndex !== null;
+          const isDimmed = hasHover && !isHovered;
+
+          return (
+            <motion.div
+              key={photo.src}
+              initial={reduce ? false : { opacity: 0, y: 12, scale: 0.95 }}
+              whileInView={reduce ? undefined : { opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.08,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className={[
+                colSpanClass[span] ?? "col-span-1",
+                "group/scene relative overflow-hidden rounded-xl border border-zinc-800/60 bg-zinc-900 ring-1 ring-white/[0.03] transition-all duration-500 ease-out",
+                isHovered
+                  ? "z-20 scale-105 border-cyan-500/40 shadow-lg shadow-cyan-950/25"
+                  : "",
+                isDimmed ? "scale-[0.92] opacity-50 blur-[2px]" : "",
+              ].join(" ")}
+            >
+              <div className={`relative ${aspectClass[span] ?? "aspect-[3/4]"} w-full`}>
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 40vw, 280px"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent opacity-50 transition-opacity duration-500 group-hover/scene:opacity-80" />
+              </div>
+              <span className="absolute bottom-2 left-2 rounded-full border border-cyan-400/25 bg-zinc-950/80 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-cyan-300/90 backdrop-blur-sm">
+                {photo.label}
+              </span>
+            </motion.div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
-function FoundersPhotoGallery() {
-  const reduce = useReducedMotion();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const spotlightX = useMotionValue(50);
-  const spotlightY = useMotionValue(50);
-  const rotateX = useSpring(0, { stiffness: 140, damping: 22 });
-  const rotateY = useSpring(0, { stiffness: 140, damping: 22 });
-  const [david, adri] = founders.members;
-
-  const spotlightBackground = useMotionTemplate`radial-gradient(420px circle at ${spotlightX}% ${spotlightY}%, rgba(34, 211, 238, 0.14), transparent 65%)`;
-
-  const handlePointerMove = useCallback(
-    (event: React.PointerEvent<HTMLDivElement>) => {
-      if (reduce || !containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const px = ((event.clientX - rect.left) / rect.width) * 100;
-      const py = ((event.clientY - rect.top) / rect.height) * 100;
-      spotlightX.set(px);
-      spotlightY.set(py);
-      const nx = (event.clientX - rect.left) / rect.width - 0.5;
-      const ny = (event.clientY - rect.top) / rect.height - 0.5;
-      rotateY.set(nx * 14);
-      rotateX.set(-ny * 11);
-    },
-    [reduce, rotateX, rotateY, spotlightX, spotlightY],
-  );
-
-  const handlePointerLeave = useCallback(() => {
-    spotlightX.set(50);
-    spotlightY.set(50);
-    rotateX.set(0);
-    rotateY.set(0);
-  }, [rotateX, rotateY, spotlightX, spotlightY]);
-
+function FounderPortrait() {
   return (
-    <motion.div
-      ref={containerRef}
-      className="group/gallery relative mx-auto w-full max-w-sm [perspective:1200px]"
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
-      style={reduce ? undefined : { rotateX, rotateY, transformStyle: "preserve-3d" }}
-    >
-      <motion.div
-        className="pointer-events-none absolute inset-0 z-0 rounded-3xl opacity-0 transition-opacity duration-700 group-hover/gallery:opacity-100"
-        style={{ background: spotlightBackground }}
-        aria-hidden
-      />
-
-      <div
-        className="pointer-events-none absolute -left-6 top-1/3 h-48 w-48 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-3xl transition-all duration-700 group-hover/gallery:bg-cyan-500/20 group-hover/gallery:scale-110"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -right-4 top-12 h-40 w-40 rounded-full bg-emerald-500/10 blur-3xl transition-all duration-700 group-hover/gallery:bg-emerald-500/18 group-hover/gallery:scale-110"
-        aria-hidden
-      />
-
-      <motion.div
-        className="relative z-10"
-        initial={reduce ? false : { opacity: 0, y: 20 }}
-        whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <div className="relative flex items-end justify-center">
-          <FounderPortrait
-            member={adri}
-            tilt={-1.5}
-            baseRotate={-2}
-            offsetClass="-mr-5 sm:-mr-6"
-            zClass="z-10"
-          />
-          <FounderPortrait
-            member={david}
-            tilt={1}
-            baseRotate={1}
-            offsetClass=""
-            zClass="z-20"
-            priority
-          />
-        </div>
-
-        <motion.div
-          className="group/team relative z-30 -mt-8 px-2 sm:-mt-10 sm:px-0"
-          whileHover={reduce ? undefined : { y: -6, scale: 1.01 }}
-          transition={hoverEase}
-        >
-          <div className="relative overflow-hidden rounded-2xl border border-cyan-500/20 bg-zinc-900 shadow-2xl shadow-cyan-950/25 ring-1 ring-cyan-400/10 transition-[border-color,box-shadow] duration-500 group-hover/team:border-cyan-400/45 group-hover/team:shadow-cyan-500/20">
-            <motion.div
-              className="relative aspect-[16/10] w-full overflow-hidden"
-              whileHover={reduce ? undefined : { scale: 1.05 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <Image
-                src={founders.teamImageSrc}
-                alt={founders.teamImageAlt}
-                width={640}
-                height={400}
-                className="h-full w-full object-cover"
-                sizes="(max-width: 1024px) 90vw, 420px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-70 transition-opacity duration-500 group-hover/team:opacity-85" />
-              <div
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 group-hover/team:translate-x-full"
-                aria-hidden
-              />
-            </motion.div>
-
-            <motion.div
-              className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2 opacity-0 transition-opacity duration-500 group-hover/team:opacity-100"
-              initial={false}
-            >
-              <span className="rounded-full border border-cyan-400/35 bg-zinc-950/85 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-cyan-200 backdrop-blur-md">
-                2 founders · 1 visión
-              </span>
-              <span className="rounded-full border border-zinc-600/50 bg-zinc-950/75 px-2.5 py-1 text-[10px] font-medium text-zinc-400 backdrop-blur-md">
-                Zeta Makers
-              </span>
-            </motion.div>
-          </div>
-        </motion.div>
-      </motion.div>
-    </motion.div>
+    <div className="relative flex min-w-0 flex-col items-center lg:items-stretch">
+      <ScenePhotoStrip />
+    </div>
   );
 }
 
@@ -230,52 +215,8 @@ export function TransparencySection() {
         </p>
       ) : null}
 
-      <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16 xl:gap-20">
-        <div className="flex flex-col items-center lg:items-stretch">
-          <FoundersPhotoGallery />
-
-          <motion.div
-            className="mt-10 grid w-full max-w-md grid-cols-2 gap-6 sm:max-w-lg"
-            initial={reduce ? false : "hidden"}
-            whileInView={reduce ? undefined : "visible"}
-            viewport={{ once: true }}
-            variants={{
-              hidden: {},
-              visible: { transition: { staggerChildren: 0.08 } },
-            }}
-          >
-            {founders.members.map((member) => (
-              <motion.div
-                key={member.name}
-                variants={{
-                  hidden: { opacity: 0, y: 10 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-                }}
-                className="flex flex-col items-center text-center sm:items-start sm:text-left"
-              >
-                <p
-                  className="font-signature text-2xl leading-none text-zinc-200 transition-colors duration-300 hover:text-cyan-100 md:text-3xl"
-                  aria-hidden
-                >
-                  {member.signature}
-                </p>
-                <a
-                  href={member.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2 text-xs font-medium text-zinc-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:text-cyan-300 hover:shadow-lg hover:shadow-cyan-950/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
-                >
-                  <LinkedInIcon className="h-3.5 w-3.5 shrink-0" />
-                  <span>LinkedIn de {member.name}</span>
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <p className="mt-8 text-center text-sm font-medium tracking-wide text-zinc-500 lg:text-left">
-            {founders.caption}
-          </p>
-        </div>
+      <div className="grid items-center gap-14 lg:overflow-hidden lg:grid-cols-2 lg:gap-16 xl:gap-20">
+        <FounderPortrait />
 
         <motion.article
           className="relative lg:pl-4 xl:pl-8"
@@ -300,13 +241,35 @@ export function TransparencySection() {
           </div>
 
           <footer className="mt-10 border-t border-zinc-800/80 pt-8">
-            <p
-              className="font-signature text-3xl text-zinc-200 transition-colors duration-500 hover:text-cyan-100 md:text-4xl"
-              aria-label={`Firmado por ${founders.jointSignature}`}
+            <div className="flex items-center gap-4">
+              <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-zinc-700/80 ring-2 ring-cyan-500/20">
+                <Image
+                  src="/landing/foto-david.jpg"
+                  alt="David Martín"
+                  width={56}
+                  height={56}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div>
+                <p
+                  className="font-signature text-3xl text-zinc-200 transition-colors duration-500 hover:text-cyan-100 md:text-4xl"
+                  aria-label={`Firmado por ${founders.founder.signature}`}
+                >
+                  {founders.founder.signature}
+                </p>
+                <p className="mt-1 text-sm text-zinc-500">Fundador, Zeta Makers</p>
+              </div>
+            </div>
+            <a
+              href={founders.founder.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-950/80 px-3 py-2 text-xs font-medium text-zinc-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-500/40 hover:text-cyan-300 hover:shadow-lg hover:shadow-cyan-950/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
             >
-              {founders.jointSignature}
-            </p>
-            <p className="mt-2 text-sm text-zinc-500">Cofundadores, Zeta Makers</p>
+              <LinkedInIcon className="h-3.5 w-3.5 shrink-0" />
+              <span>LinkedIn de {founders.founder.name}</span>
+            </a>
           </footer>
         </motion.article>
       </div>
