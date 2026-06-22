@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   founders,
   foundersSection,
+  type ScenePhoto,
 } from "../landing-data";
 import { useScrollReveal } from "../landing-motion";
 import { sectionClass } from "./constants";
@@ -25,6 +26,12 @@ function LinkedInIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+const visibleScenePhotos: ScenePhoto[] = [
+  "/landing/programando-norrsken.jpg",
+  "/landing/grabando-corporativo-vertical.png",
+  "/landing/programando-cafeteria.jpg",
+].map((src) => founders.scenePhotos.find((p) => p.src === src)!);
 
 function ScenePhotoStrip() {
   const reduce = useReducedMotion();
@@ -75,10 +82,10 @@ function ScenePhotoStrip() {
           ref={scrollRef}
           className="flex items-start w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto pb-2 scrollbar-hide"
         >
-          {founders.scenePhotos.map((photo, index) => {
+          {visibleScenePhotos.map((photo, index) => {
             const fromLeft = index % 2 === 0;
             const isFirst = index === 0;
-            const isLast = index === founders.scenePhotos.length - 1;
+            const isLast = index === visibleScenePhotos.length - 1;
 
             return (
               <motion.div
@@ -146,8 +153,8 @@ function ScenePhotoStrip() {
       </div>
 
       <div className="mt-6 hidden grid grid-cols-3 gap-2 sm:gap-3 sm:grid">
-        {founders.scenePhotos.map((photo, index) => {
-          const span = photo.colSpan ?? 1;
+{visibleScenePhotos.map((photo, index) => {
+            const span = photo.colSpan ?? 1;
           const isHovered = hoveredIndex === index;
           const hasHover = hoveredIndex !== null;
           const isDimmed = hasHover && !isHovered;
@@ -203,7 +210,7 @@ function FounderPortrait() {
   );
 }
 
-export function TransparencySection() {
+export function FounderSection() {
   const scrollReveal = useScrollReveal();
   const reduce = useReducedMotion();
 
@@ -258,7 +265,7 @@ export function TransparencySection() {
                 >
                   {founders.founder.signature}
                 </p>
-                <p className="mt-1 text-sm text-zinc-500">Fundador, Zeta Makers</p>
+                <p className="mt-1 text-sm text-zinc-500">Fundador de Zeta Makers</p>
               </div>
             </div>
             <a

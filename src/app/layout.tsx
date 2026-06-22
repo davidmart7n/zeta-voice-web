@@ -19,9 +19,9 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Zeta Voice | LinkedIn en piloto automático para Founder y Empresa",
+  title: "Zeta Voice | Tu presencia en LinkedIn sin escribir una línea",
   description:
-    "Dominamos LinkedIn por ti: Brand Brain, contenido proactivo desde cero y aprobación en un clic desde la Zeta App. Solicita 3 posts gratuitos para tu cuenta.",
+    "Publicamos en LinkedIn por ti, con tu voz y sin robarte el día. Entra en la lista y recibe el primer correo hoy.",
   icons: {
     icon: "/logo-4k-zeta-makers.png",
   },

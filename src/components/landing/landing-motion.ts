@@ -16,10 +16,10 @@ export function useScrollReveal(): Pick<
     return {};
   }
   return {
-    initial: { opacity: 0, y: 16 },
+    initial: { opacity: 0, y: 24 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-80px 0px" },
-    transition: { duration: 0.9, ease: easeOut },
+    viewport: { once: true, margin: "-30% 0px" },
+    transition: { duration: 3, ease: easeOut },
   };
 }
 
