@@ -7,11 +7,7 @@ import { useHeroImageMotion, useHeroStaggerVariants } from "../landing-motion";
 import { MotionButton } from "../ui/motion-button";
 import { sectionClass } from "./constants";
 
-type HeroSectionProps = {
-  onOpenDemo: () => void;
-};
-
-export function HeroSection({ onOpenDemo }: HeroSectionProps) {
+export function HeroSection() {
   const heroStagger = useHeroStaggerVariants();
   const heroImageMotion = useHeroImageMotion();
 
@@ -19,7 +15,7 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
     <section className={`${sectionClass} relative overflow-visible pb-14 pt-20`}>
       <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_auto] lg:gap-11">
         <motion.div
-          className="space-y-6 lg:max-w-[30rem] lg:pr-4"
+          className="space-y-6 lg:max-w-[34rem] lg:pr-4"
           variants={heroStagger.container}
           initial="hidden"
           animate="visible"
@@ -32,7 +28,7 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
           </motion.p>
           <motion.h1
             variants={heroStagger.item}
-            className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl"
+            className="text-4xl font-semibold leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl"
           >
             {hero.title}
           </motion.h1>
@@ -43,7 +39,7 @@ export function HeroSection({ onOpenDemo }: HeroSectionProps) {
             {hero.subtitle}
           </motion.p>
           <motion.div variants={heroStagger.item} className="flex flex-col gap-3 sm:flex-row">
-            <MotionButton variant="primary" onClick={onOpenDemo}>
+            <MotionButton variant="primary" href="#apuntarme">
               {hero.cta}
             </MotionButton>
           </motion.div>

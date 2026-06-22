@@ -1,25 +1,17 @@
-"use client";
-
-import { useState } from "react";
-import { DemoRequestModal } from "./demo-request-modal";
-import { demoModal } from "./landing-data";
-import { AppMockupSection } from "./sections/app-mockup-section";
-import { BeforeAfterSection } from "./sections/before-after-section";
-import { ComparisonSection } from "./sections/comparison-section";
+import { bridgeTexts } from "./landing-data";
+import { BridgeText } from "./bridge-text";
+import { EmailCtaSection } from "./sections/email-cta-section";
+import { EnemyComparisonSection } from "./sections/enemy-comparison-section";
 import { FaqSection } from "./sections/faq-section";
-import { FinalCtaSection } from "./sections/final-cta-section";
+import { FounderSection } from "./sections/founder-section";
 import { HeroSection } from "./sections/hero-section";
 import { LandingFooter } from "./sections/landing-footer";
+import { NotForSection } from "./sections/not-for-section";
 import { PainSection } from "./sections/pain-section";
 import { RealitySection } from "./sections/reality-section";
 import { ResultsSection } from "./sections/results-section";
-import { TransparencySection } from "./sections/transparency-section";
 
 export function LandingPage() {
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
-
-  const openDemo = () => setDemoModalOpen(true);
-
   return (
     <main className="relative overflow-x-clip overflow-y-hidden bg-[#07090d] text-zinc-100">
       <div
@@ -27,24 +19,21 @@ export function LandingPage() {
         aria-hidden
       />
 
-      <HeroSection onOpenDemo={openDemo} />
+      <HeroSection />
+      <BridgeText text={bridgeTexts.afterHero} />
       <RealitySection />
+      <BridgeText text={bridgeTexts.afterReality} />
       <PainSection />
-      <BeforeAfterSection />
-      <AppMockupSection />
+      <BridgeText text={bridgeTexts.afterPain} />
+      <EnemyComparisonSection />
+      <BridgeText text={bridgeTexts.afterEnemyComparison} />
       <ResultsSection />
-      <ComparisonSection />
-      <TransparencySection />
+      <BridgeText text={bridgeTexts.afterResults} />
+      <FounderSection />
+      <NotForSection />
       <FaqSection />
-      <FinalCtaSection onOpenDemo={openDemo} />
+      <EmailCtaSection />
       <LandingFooter />
-
-      <DemoRequestModal
-        open={demoModalOpen}
-        onClose={() => setDemoModalOpen(false)}
-        title={demoModal.title}
-        description={demoModal.description}
-      />
     </main>
   );
 }

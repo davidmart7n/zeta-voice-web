@@ -1,21 +1,11 @@
 import { NextResponse } from "next/server";
 
-const PROFILE_VALUES = new Set([
-  "empresa",
-  "founder_ceo",
-  "director_clevel",
-  "marketing_lead",
-  "interesado",
-]);
-
 type Body = {
-  fullName?: unknown;
   email?: unknown;
-  phone?: unknown;
-  profileType?: unknown;
-  companyName?: unknown;
   source?: unknown;
 };
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function isNonEmptyString(v: unknown): v is string {
   return typeof v === "string" && v.trim().length > 0;
@@ -37,29 +27,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "JSON inválido." }, { status: 400 });
   }
 
-  const fullName = typeof json.fullName === "string" ? json.fullName.trim() : "";
   const email = typeof json.email === "string" ? json.email.trim() : "";
-  const phone = typeof json.phone === "string" ? json.phone.trim() : "";
-  const companyName = typeof json.companyName === "string" ? json.companyName.trim() : "";
-  const profileType = typeof json.profileType === "string" ? json.profileType : "";
   const source =
     typeof json.source === "string" && json.source.length <= 64 ? json.source.trim() : "";
 
-  if (!isNonEmptyString(fullName) || !isNonEmptyString(email) || !isNonEmptyString(phone)) {
-    return NextResponse.json({ error: "Faltan nombre, correo o teléfono." }, { status: 400 });
-  }
-  if (!PROFILE_VALUES.has(profileType)) {
-    return NextResponse.json({ error: "Tipo de perfil no válido." }, { status: 400 });
+  if (!isNonEmptyString(email) || !EMAIL_RE.test(email)) {
+    return NextResponse.json({ error: "Correo no válido." }, { status: 400 });
   }
 
   const ingestSecret = process.env.GOOGLE_SHEETS_INGEST_SECRET?.trim();
+
   const payload = {
-    fullName,
+    fullName: "(newsletter)",
     email,
-    phone,
-    profileType,
-    ...(companyName ? { companyName } : {}),
-    ...(source ? { source } : {}),
+    phone: "-",
+    profileType: "interesado",
+    source: source || "landing-email",
     ...(ingestSecret ? { ingestSecret } : {}),
   };
 
