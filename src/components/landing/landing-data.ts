@@ -303,7 +303,7 @@ export const faqItems = [
   },
   {
     q: "¿Qué mandáis en el newsletter?",
-    a: "Innovación, marketing y redes sociales para negocios y profesionales. Mi perspectiva y aprendizajes como Founder en el camino — y, por supuesto, los beneficios de nuestros servicios. Pero no de forma tradicional.",
+    a: "Hitorias reales y ayudas en innovación, marketing y redes sociales para profesionales y negocios. Mi perspectiva y aprendizajes como Founder en el camino — y, por supuesto, los beneficios de nuestros servicios. Pero no de forma tradicional.",
   },
 ];
 
