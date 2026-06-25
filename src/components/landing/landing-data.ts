@@ -5,7 +5,7 @@ export type SectionMeta = {
 };
 
 export const hero = {
-  preheader: "¿Cuánto en serio te tomas tu carrera?",
+  preheader: "EL COSTE OCULTO DE TU SILENCIO PROFESIONAL",
   title: "Estamos a Junio. De 2026. Y la vocecita sigue en tu cabeza.",
   subtitle:
     "\"Me prometí que empezaría a publicar este año.\"  Mientras, ese tío mediocre, sigue publicando y llevándose el mercado.",
