@@ -303,25 +303,24 @@ export const faqItems = [
   },
   {
     q: "¿Qué mandáis en el newsletter?",
-    a: "Innovación, marketing y redes sociales para negocios y profesionales. Mi perspectiva y aprendizajes como Founder en el camino — y, por supuesto, los beneficios de nuestros servicios. Pero no de forma tradicional.",
+    a: "Ideas incómodas sobre tecnología, negocio y, sobre todo, cómo dominar el mercado publicando contenido premium a lo bestia sin mover un dedo.",
   },
 ];
 
 export const emailCta = {
-  title: "Yo, David, te cuento lo que sé y lo que aprendo",
+  title: "Te cuento los secretos de nuestros procesos.",
   paragraphs: [
-    "Corto, y directo a los aprendizajes.",
-    "Te cuento los errores que cometo cada día yo, y otros Founders — cosas que te pueden hacer crecer o perder sobre las nuevas formas de tecnología y negocio.",
-    "Y cosas sobre nuestros procesos. Por ejemplo: cómo  hacemos para que nuestros clientes publiquen muchísimo sin escribir una línea.",
-    "Sí, dentro te venderé mis servicios. Si no te gusta, te das de baja. Entrar es gratis. Salir también.", 
-    "¡Pon tu correo y el primero llega hoy!",
+    "Corto, y directo al valor.",
+   "Claves que hacen que nuestros clientes estén en la mente de su audiencia todos los días sin escribir una sola línea",
+    "Si entras, te educaré sobre el futuro del contenido y te venderé mis servicios. Si no te gusta, te das de baja con un click. No dejamos traumas psicológicos a nadie.",
+    "Pon tu correo si quieres recibir el primero hoy."
   ],
   button: "Recibir el primer correo hoy",
 };
 
 export const microcopy = {
   placeholder: "tu@empresa.com",
-  trustLine: "Sin compromiso ninguno.",
+  trustLine: "Sin compromiso. Entras y sales.",
 };
 
 export const bridgeTexts = {

@@ -74,7 +74,7 @@ export function EmailCtaSection() {
             role="status"
             className="mt-8 rounded-xl border border-emerald-400/40 bg-emerald-500/10 px-5 py-4 text-sm text-emerald-100"
           >
-            Hecho. Revisa tu correo — el primero ya va de camino.
+            Hecho. Has entrado en la lista de correo — Aún no está en marcha. Recibirás el primero en los próximos días.
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="mt-8 max-w-xl space-y-3" noValidate>
