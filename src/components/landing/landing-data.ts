@@ -5,12 +5,12 @@ export type SectionMeta = {
 };
 
 export const hero = {
-  preheader: "EL COSTE OCULTO DE TU SILENCIO PROFESIONAL",
-  title: "Estamos a Junio. De 2026. Y la vocecita sigue en tu cabeza.",
+  preheader: "LINKEDIN PREMIUM EN PILOTO AUTOMÁTICO",
+  title: "Eres el mejor en lo tuyo. Pero en LinkedIn no existes.",
   subtitle:
-    "\"Me prometí que empezaría a publicar este año.\"  Mientras, ese tío mediocre, sigue publicando y llevándose el mercado.",
-  cta: "Quiero ver cómo suena esto",
-  ctaSubtext: "Si sigues scrolleando, aviso que no te va a agradar...",
+    "Llevas meses posponiéndolo por falta de tiempo. Y mientras tú callas, otros con la mitad de tu experiencia se están llevando tu mercado.",
+  cta: "Quiero cambiar esto (sin perder tiempo)",
+  ctaSubtext: "Aviso: Si sigues scrolleando, puede que te ofendas...",
   imageSrc: "/landing/antes-despues-voice.png",
   imageAlt: "Vista principal del hub de clientes de Zeta Voice",
 };
@@ -31,12 +31,12 @@ export const realityTruths: RealityTruth[] = [
   {
     step: "01",
     hook: "Te investigan siempre.",
-    body: "8 de cada 10 decisores van a ver tu perfil después de una llamada o un mensaje. Al ver un desierto inactivo, pierdes el contrato.",
+    body: "8 de cada 10 decisores van a ver tu perfil después de una llamada o un mensaje. Al ver un desierto inactivo y no profesional, pierdes el contrato.",
   },
   {
     step: "02",
     hook: "Estás multiplicando por 8 tu esfuerzo.",
-    body: "Si el cliente no te ha leído antes en su feed, la tasa de respuesta se reduce más de 8 veces. Sí, ocho. Estás quemando leads y el tiempo invertido.",
+    body: "Si el cliente no te ha leído antes en su feed, la tasa de respuesta se reduce más de 8 veces.",
   },
   {
     step: "03",
@@ -147,19 +147,19 @@ export const resultsOutcomes: ResultOutcome[] = [
   {
     icon: "📝",
     title: "1 a 5 posts por semana sin perder un segundo",
-    body: "Aparecen listos en tu móvil. Apruebas y sigues con tu día. No abres un documento en blanco nunca más.",
+    body: "Aparecen listos en tu móvil. Apruebas el lunes y sigues con tu semana. No vuelves a abrir un documento en blanco.",
     accent: "cyan",
   },
   {
     icon: "💬",
     title: "Tus clientes te leen y responden",
-    body: "Llevan semanas leyéndote en silencio. Cuando se deciden a escribirte, ya confían. No es puerta fría: es puerta abierta.",
+    body: "Te empiezan a leer en silencio. Cuando se deciden a escribirte, ya confían. No es puerta fría: es puerta abierta.",
     accent: "emerald",
   },
   {
     icon: "🛑",
     title: "Dejas de corregir textos cada semana",
-    body: "Lo que se publica suena a ti. No a una plantilla, no a un becario, no a ChatGPT sin filtro. Te leen y piensan: «lo ha escrito Pepito».",
+    body: "Lo que se publica suena a ti. No a un becario, no a ChatGPT. Te leen y piensan: «lo ha escrito él».",
     accent: "amber",
   },
 ];
@@ -327,7 +327,7 @@ export const bridgeTexts = {
   afterHero:
     "No es una opinión. Son datos (y el primero te va a molestar).",
   afterReality:
-    "Saberlo no cambia nada. Nada de lo que sientes cada semana.",
+    "Pero la verdad es que saberlo no cambia nada.",
   afterPain:
     "Pensaste que con un poco de ayuda, lo solucionarías... ",
   afterEnemyComparison:
