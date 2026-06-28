@@ -5,7 +5,7 @@ export type SectionMeta = {
 };
 
 export const hero = {
-  preheader: "LINKEDIN PREMIUM EN PILOTO AUTOMÁTICO",
+  preheader: "AUTORIDAD B2B EN PILOTO AUTOMÁTICO",
   title: "Eres el mejor en lo tuyo. Pero en LinkedIn no existes.",
   subtitle:
     "Llevas meses posponiéndolo por falta de tiempo. Y mientras tú callas, otros con la mitad de tu experiencia se están llevando tu mercado.",
@@ -40,7 +40,7 @@ export const realityTruths: RealityTruth[] = [
   },
   {
     step: "03",
-    hook: "El 98,7% de tu sector es vago.",
+    hook: "El 98,7% de tu sector son unos vagos.",
     body: "Es la cantidad exacta de gente en tu industria que no publica con constancia. El mercado, la autoridad y las ventas están ahí, esperando a quien abra la boca primero.",
   },
 ];
@@ -92,18 +92,35 @@ export type EnemyContrast = {
   zeta: string;
 };
 
-export const enemyComparison = {
-  intro: [
-    "Una de dos:",
-    "La agencia y el copywriter de miles de euros.",
-    "Te hicieron aguantar tres reuniones semanales que podían ser un maldito email. Y para posts mediocres que no sonaban a ti.",
-    "✨ChatGPT✨. Publicaste dos veces, gastando 2 horas por post. Tampoco tuvieron impacto. Obviamente lo dejaste.",
-    "La mediocridad devuelve mediocridad.",
-  ],
-  bridge:
-      "Zeta Voice no es un parche. Y te explico por qué.",
+export type EnemyIntroOption = {
+  title: string;
+  body: string;
+};
 
-    //"Zeta Voice no es un parche. Extrae cómo piensas en una sola conversación (cero reuniones eternas) y opera el ecosistema completo por ti.",
+export type EnemyIntro = {
+  lead: string;
+  options: EnemyIntroOption[];
+  closing: string;
+};
+
+export const enemyComparison = {
+  intro: {
+    lead: "Seguro que ya has probado una de estas dos cosas:",
+    options: [
+      {
+        title: "La agencia (o el copywriter) de miles de euros.",
+        body:
+          "Les pagas para delegar, y te roban el tiempo con tres reuniones a la semana. Al final te entregan textos y resultados que no suenan a ti. Y acabas corrigiéndolos tú mismo.",
+      },
+      {
+        title: "✨ ChatGPT ✨.",
+        body:
+          "Le pides un post. Te devuelve un texto robótico lleno de emojis y expresiones que no usas. Y en total, 2 horas gastadas en editarlo para que sea publicable.",
+      },
+    ],
+    closing: "Mediocridad devuelve mediocridad.",
+  } satisfies EnemyIntro,
+  bridge: "Zeta Voice no es un parche. Y te explico por qué.",
   contrasts: [
     {
       label: "Las ideas",
@@ -129,9 +146,9 @@ export const enemyComparison = {
 };
 
 export const resultsSection: SectionMeta = {
-  eyebrow: "Empieza la magia",
-  title: "Dejas de ser invisible. Y tu competencia lo nota.",
-  subtitle: "",
+  eyebrow: "EL RETORNO DE TU INVERSIÓN",
+  title: "Recuperas tu autoridad. Y dejas de regalar clientes.",
+  subtitle: "Esto no es \"marca personal\" vacía. Es un canal de captación autónomo y constante.",
 };
 
 export type ResultOutcomeAccent = "cyan" | "emerald" | "amber";
@@ -189,9 +206,9 @@ export type ScenePhoto = {
 export const founders = {
   noteTitle: "Yo también dejé de publicar",
   noteParagraphs: [
-    "Como creador, construí una audiencia de más de 2 millones de viewers. Aprendí cómo captar atención y generar interés. Y era una gran pasión. Pero con las responsabilidades profesionales reales, me vi obligado a dejarlo.",
+    "Como creador, construí una audiencia de más de 2 millones de vistas. Aprendí cómo captar atención y generar interés. Y era una gran pasión. Pero con las responsabilidades profesionales reales, me vi obligado a dejarlo.",
     "Contratar editores o una agencia me exigía demasiadas reuniones para resultados mediocres. ChatGPT daba pena leerlo y no era una solución completa. ¡No había algo premium para el profesional que quiere publicar pero tiene mil cosas que hacer!",
-    "Así que construí Zeta Voice para mí. Un sistema que extrae tu historia, experiencia y conocimiento, y publica en piloto automático con tu propia voz. Si quieres ver exactamente cómo lo hacemos por dentro, deja tu correo abajo",  ],
+    "Así que construí Zeta Voice para mí. Un sistema que extrae mi historia, experiencia y conocimiento, y publica en piloto automático con mi propia voz. Si quieres ver exactamente cómo lo hacemos por dentro, deja tu correo abajo",  ],
   founder: {
     name: "David",
     imageSrc: "/landing/grabando-corporativo-vertical.png",
@@ -268,7 +285,7 @@ export const notFor: {
   yesThem: [
     {
       icon: "✓",
-      text: "Sabes que tu empresa es buena, pero en LinkedIn nadie se entera.",
+      text: "Sabes que tu empresa y es buena, pero en LinkedIn nadie se entera.",
     },
     {
       icon: "✓",
@@ -310,8 +327,8 @@ export const emailCta = {
   title: "Te cuento los secretos de nuestros procesos.",
   paragraphs: [
     "Corto, y directo al valor.",
-   "Claves que hacen que nuestros clientes estén en la mente de su audiencia todos los días sin escribir una sola línea",
-    "Si entras, te educaré sobre el futuro del contenido y te venderé mis servicios. Si no te gusta, te das de baja con un click. No dejamos traumas psicológicos a nadie.",
+   "Las claves que hacen que nuestros clientes estén en la mente de su audiencia todos los días sin escribir una sola línea",
+    "Si entras, te educaré sobre el futuro del contenido y te venderé mis servicios. Si no te gusta, te das de baja con un click. No dejamos traumas psicológicos a nadie",
     "Pon tu correo si quieres recibir el primero hoy."
   ],
   button: "Recibir el primer correo hoy",
@@ -332,5 +349,5 @@ export const bridgeTexts = {
   afterEnemyComparison:
     "¿Y qué pasa cuando empiezas con un buen sistema?",
   afterResults:
-    "Esto no lo diseñó una IA o una consultora. Lo construyó uno que estaba tan harto como tú.",
+    "Esto no lo diseñó una IA o una consultora. Lo construyó alguien que lo necesitaba tanto como tú.",
 };

@@ -112,15 +112,28 @@ export function EnemyComparisonSection() {
           className="pointer-events-none absolute -left-10 top-0 h-28 w-44 rounded-full bg-cyan-500/10 blur-3xl"
           aria-hidden
         />
-        <div className="relative space-y-4">
-          {enemyComparison.intro.map((p) => (
-            <p
-              key={p}
-              className="text-base leading-relaxed text-zinc-300 md:text-lg"
-            >
-              {p}
-            </p>
-          ))}
+        <div className="relative space-y-5">
+          <p className="text-lg font-medium leading-relaxed text-white md:text-xl">
+            {enemyComparison.intro.lead}
+          </p>
+          <div className="space-y-4">
+            {enemyComparison.intro.options.map((option) => (
+              <div
+                key={option.title}
+                className="relative border-l-2 border-cyan-500/30 pl-4"
+              >
+                <p className="font-mono text-sm uppercase tracking-[0.12em] text-cyan-300">
+                  {option.title}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                  {option.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="text-base font-semibold leading-relaxed text-white md:text-lg">
+            {enemyComparison.intro.closing}
+          </p>
         </div>
       </motion.div>
 
