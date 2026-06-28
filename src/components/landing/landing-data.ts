@@ -76,7 +76,7 @@ export const painSymptoms: PainSymptom[] = [
   {
     icon: "⏳",
     title: "«El bobo sigue posteando»",
-    body: "Tú, otra semana sin publicar. Y el tío con menos experiencia ya publicó tres veces. No porque sea mejor — porque sabe la importancia de estar presente.",
+    body: "Tú, otra semana sin publicar. Y el tipo con menos experiencia ya publicó tres veces. No porque sea mejor — porque sabe la importancia de estar presente.",
   },
 ];
 
@@ -189,10 +189,9 @@ export type ScenePhoto = {
 export const founders = {
   noteTitle: "Yo también dejé de publicar",
   noteParagraphs: [
-    "Me encantaban las redes sociales. Compartir con el mundo. Instagram, Youtube y TikTok personal con más de 2 millones de visitas. Pero el trabajo y mis nuevas prioridades me hicieron abandonar.",
-    "Probé editores. Probé usar la IA. Nada me convenció. Así que construí lo que yo necesitaba: algo que compartiese como yo, sin robarme el día.",
-    "Y, honestamente, como actual creador, déjame decirte que, si estás en silencio, estás perdiendo relevancia y clientes a diario. Yo ya pasé por eso. Si quieres ver cómo lo resolvimos, deja tu correo abajo.",
-  ],
+    "Como creador, construí una audiencia de más de 2 millones de viewers. Aprendí cómo captar atención y generar interés. Y era una gran pasión. Pero con las responsabilidades profesionales reales, me vi obligado a dejarlo.",
+    "Contratar editores o una agencia me exigía demasiadas reuniones para resultados mediocres. ChatGPT daba pena leerlo y no era una solución completa. ¡No había algo premium para el profesional que quiere publicar pero tiene mil cosas que hacer!",
+    "Así que construí Zeta Voice para mí. Un sistema que extrae tu historia, experiencia y conocimiento, y publica en piloto automático con tu propia voz. Si quieres ver exactamente cómo lo hacemos por dentro, deja tu correo abajo",  ],
   founder: {
     name: "David",
     imageSrc: "/landing/grabando-corporativo-vertical.png",

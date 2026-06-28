@@ -5,12 +5,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import {
-  founders,
-  foundersSection,
-  type ScenePhoto,
-} from "../landing-data";
+import { founders, foundersSection } from "../landing-data";
 import { useScrollReveal } from "../landing-motion";
 import { sectionClass } from "./constants";
 
@@ -27,178 +22,39 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-const visibleScenePhotos: ScenePhoto[] = [
-  "/landing/programando-norrsken.jpg",
-  "/landing/grabando-corporativo-vertical.png",
-  "/landing/programando-cafeteria.jpg",
-].map((src) => founders.scenePhotos.find((p) => p.src === src)!);
+const grabandoPhoto = founders.scenePhotos.find(
+  (p) => p.src === "/landing/grabando-corporativo-vertical.png",
+)!;
 
 function ScenePhotoStrip() {
   const reduce = useReducedMotion();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [hasScrolled, setHasScrolled] = useState(false);
-  const ignoreInitialScroll = useRef(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      ignoreInitialScroll.current = false;
-    }, 800);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-
-    const handleScroll = () => {
-      if (ignoreInitialScroll.current) return;
-      if (el.scrollLeft > 10) {
-        setHasScrolled(true);
-      }
-    };
-
-    el.addEventListener("scroll", handleScroll, { passive: true });
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const colSpanClass: Record<number, string> = {
-    1: "col-span-1",
-    2: "col-span-2",
-    3: "col-span-3",
-  };
-
-  const aspectClass: Record<number, string> = {
-    1: "aspect-[3/4]",
-    2: "aspect-[16/9]",
-    3: "aspect-[21/9]",
-  };
 
   return (
-    <>
-      <div className="relative mt-6 w-full sm:hidden">
-        <div
-          ref={scrollRef}
-          className="flex items-start w-full min-w-0 snap-x snap-mandatory gap-4 overflow-x-auto pb-2 scrollbar-hide"
-        >
-          {visibleScenePhotos.map((photo, index) => {
-            const fromLeft = index % 2 === 0;
-            const isFirst = index === 0;
-            const isLast = index === visibleScenePhotos.length - 1;
-
-            return (
-              <motion.div
-                key={photo.src}
-                initial={reduce ? false : { opacity: 0, x: fromLeft ? -30 : 30 }}
-                whileInView={reduce ? undefined : { opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.08,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className={[
-                  photo.aspect === "horizontal" ? "w-[90vw]" : "w-[80vw]",
-                  "shrink-0 snap-center group/scene relative overflow-hidden rounded-xl border border-zinc-800/60 bg-zinc-900 ring-1 ring-white/[0.03]",
-                  isFirst ? "ml-[10vw]" : "",
-                  isLast ? "mr-[10vw]" : "",
-                ].join(" ")}
-              >
-                <div className={`relative ${photo.aspect === "horizontal" ? "aspect-[16/9]" : "aspect-[4/5]"} w-full`}>
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    className="object-cover"
-                    sizes={photo.aspect === "horizontal" ? "90vw" : "80vw"}
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent opacity-50" />
-                </div>
-                <span className="absolute bottom-2 left-2 rounded-full border border-cyan-400/25 bg-zinc-950/80 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-cyan-300/90 backdrop-blur-sm">
-                  {photo.label}
-                </span>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        <div
-          className={[
-            "pointer-events-none absolute bottom-4 right-4 z-10 flex items-center gap-1 rounded-full border border-cyan-400/30 bg-zinc-950/90 px-3 py-1.5 backdrop-blur-sm transition-opacity duration-300",
-            hasScrolled ? "opacity-0" : "opacity-100",
-          ].join(" ")}
-        >
-          <span className="text-[10px] font-medium uppercase tracking-wider text-cyan-300/90">
-            Desliza
-          </span>
-          <motion.svg
-            className="h-3.5 w-3.5 text-cyan-400"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            animate={reduce ? {} : { x: [0, 4, 0] }}
-            transition={{
-              duration: 1.2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </motion.svg>
-        </div>
+    <motion.div
+      initial={reduce ? false : { opacity: 0, scale: 0.95 }}
+      whileInView={reduce ? undefined : { opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="group/scene relative mt-6 w-full overflow-hidden rounded-2xl border border-zinc-800/60 bg-zinc-900 ring-1 ring-white/[0.03]"
+    >
+      <div className="relative aspect-[3/4] w-full sm:aspect-[4/5] md:aspect-[3/4] lg:aspect-[4/5]">
+        <Image
+          src={grabandoPhoto.src}
+          alt={grabandoPhoto.alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 80vw, 400px"
+          priority
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent opacity-50" />
       </div>
-
-      <div className="mt-6 hidden grid grid-cols-3 gap-2 sm:gap-3 sm:grid">
-{visibleScenePhotos.map((photo, index) => {
-            const span = photo.colSpan ?? 1;
-          const isHovered = hoveredIndex === index;
-          const hasHover = hoveredIndex !== null;
-          const isDimmed = hasHover && !isHovered;
-
-          return (
-            <motion.div
-              key={photo.src}
-              initial={reduce ? false : { opacity: 0, y: 12, scale: 0.95 }}
-              whileInView={reduce ? undefined : { opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.08,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className={[
-                colSpanClass[span] ?? "col-span-1",
-                "group/scene relative overflow-hidden rounded-xl border border-zinc-800/60 bg-zinc-900 ring-1 ring-white/[0.03] transition-all duration-500 ease-out",
-                isHovered
-                  ? "z-20 scale-105 border-cyan-500/40 shadow-lg shadow-cyan-950/25"
-                  : "",
-                isDimmed ? "scale-[0.92] opacity-50 blur-[2px]" : "",
-              ].join(" ")}
-            >
-              <div className={`relative ${aspectClass[span] ?? "aspect-[3/4]"} w-full`}>
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 40vw, 280px"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent opacity-50 transition-opacity duration-500 group-hover/scene:opacity-80" />
-              </div>
-              <span className="absolute bottom-2 left-2 rounded-full border border-cyan-400/25 bg-zinc-950/80 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-cyan-300/90 backdrop-blur-sm">
-                {photo.label}
-              </span>
-            </motion.div>
-          );
-        })}
-      </div>
-    </>
+      <span className="absolute bottom-3 left-3 rounded-full border border-cyan-400/25 bg-zinc-950/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-cyan-300/90 backdrop-blur-sm">
+        {grabandoPhoto.label}
+      </span>
+    </motion.div>
   );
 }
 
